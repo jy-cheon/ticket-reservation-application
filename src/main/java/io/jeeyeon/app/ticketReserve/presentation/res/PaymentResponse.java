@@ -1,4 +1,4 @@
-package io.jeeyeon.app.ticketReserve.controller.res;
+package io.jeeyeon.app.ticketReserve.presentation.res;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
