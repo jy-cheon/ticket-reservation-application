@@ -1,28 +1,29 @@
 package io.jeeyeon.app.ticketReserve.domain.queueToken;
 
-import jakarta.persistence.EntityNotFoundException;
+import io.jeeyeon.app.ticketReserve.domain.common.exception.BaseException;
+import io.jeeyeon.app.ticketReserve.domain.common.exception.ErrorType;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class QueueTokenService {
     private final QueueTokenRepository queueTokenRepository;
     private static final int MAX_ACTIVE_TOKENS = 100; // 최대 활성화 가능한 토큰 수
 
-
     public QueueToken createToken(Long userId, Long concertId) {
         // 콘서트별 순서 id 조회
         Long nextSequenceId = queueTokenRepository.getNextSequenceIdForConcert(concertId);
 
         // 대기 토큰 생성
-        QueueToken newToken = new QueueToken(userId, concertId, nextSequenceId);
+        QueueToken token = new QueueToken(userId, concertId, nextSequenceId);
 
-        queueTokenRepository.save(newToken);
+        QueueToken newToken = queueTokenRepository.save(token);
         return newToken;
     }
 
@@ -44,13 +45,13 @@ public class QueueTokenService {
     // 대기 토큰 활성화
     private long activateQueueTokens(Long concertId) {
         List<QueueToken> currentActiveTokens = getActiveTokens(concertId);
-        long waitingTokensSize = MAX_ACTIVE_TOKENS - currentActiveTokens.size();
+        long activatableTokenCount = MAX_ACTIVE_TOKENS - currentActiveTokens.size();
 
-        if (waitingTokensSize == 0) {
+        if (activatableTokenCount == 0) {
             return 0;
         }
 
-        List<QueueToken> waitingTokens = findWaitingTokens(concertId, TokenStatus.WAITING, waitingTokensSize);
+        List<QueueToken> waitingTokens = findWaitingTokens(concertId, TokenStatus.WAITING, activatableTokenCount);
         for (QueueToken token : waitingTokens) {
             activateQueueToken(token);
         }
@@ -70,9 +71,14 @@ public class QueueTokenService {
         // 활성화 상태인데, 만료시간이 이미 지난 토큰
         List<QueueToken> expiredTokens = queueTokenRepository.findByStatusAndExpiredAtBefore(TokenStatus.ACTIVE, LocalDateTime.now());
         for (QueueToken token : expiredTokens) {
-            token.expireQueueToken();
-            queueTokenRepository.save(token);
+            expireQueueToken(token);
         }
+    }
+
+    // 토큰 단건 만료 처리
+    private void expireQueueToken(QueueToken token) {
+        token.expireQueueToken();
+        queueTokenRepository.save(token);
     }
 
     private List<QueueToken> findByConcertIdAndStatus(Long concertId, TokenStatus status) {
@@ -86,36 +92,36 @@ public class QueueTokenService {
     }
 
 
-    public QueueToken isValidToken(Long concertId, Long tokenId) {
+    public QueueToken validateActiveToken(Long concertId, Long tokenId) {
         // 토큰 유효성 검증
          QueueToken token = queueTokenRepository.findByTokenIdAndConcertId(concertId, tokenId)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid token"));
+                .orElseThrow(() -> new BaseException(ErrorType.INVALID_TOKEN));
 
-        // 토큰의 상태가 활성화인지 확인
-        if(!token.isActive()) {
-            throw new IllegalArgumentException("Token is not active");
+        token.validateActiveToken();
+        return token;
+    }
+
+    public QueueToken findByTokenId(Long tokenId) {
+        return queueTokenRepository.findByTokenId(tokenId)
+                .orElseThrow(() -> new BaseException(ErrorType.ENTITY_NOT_FOUND));
+    }
+
+    public QueueToken getTokenInfo(Long tokenId) {
+        QueueToken token = findByTokenId(tokenId);
+        if (token.isWaiting()) {
+            // 대기 번호 조회
+            long aheadCount = queueTokenRepository.findWaitingAheadCount(token.getConcertId(), token.getSequenceId(), token.getStatus());
+            log.info("대기 번호 조회 : {}",aheadCount);
+            // 대기 번호 설정
+            token.setAheadCount(aheadCount);
+        } else if (token.isActive()) {
+            token.setAheadCount(0l);
         }
         return token;
     }
 
-    public String getQueueNumber(Long concertId, Long tokenId) {
-        // 대기열 번호 확인 로직 구현
-        // 여기서는 간단하게 문자열로 반환
-        return "Your queue number is 548"; // 예시로 숫자를 반환
-    }
-
-    public Optional<QueueToken> findByTokenId(Long tokenId) {
-        return queueTokenRepository.findByTokenId(tokenId);
-    }
-
-    public void verifyUser(Long tokenId, Long userId) {
-        Optional<QueueToken> token = findByTokenId(tokenId);
-        if (token.isEmpty()) {
-            throw new EntityNotFoundException("Token not found with ID: " + tokenId);
-        }
-
-        if (!token.get().getUserId().equals(userId)) {
-//            throw new UnauthorizedException("Unauthorized user for token ID: " + tokenId);
-        }
+    public void expireQueueToken(Long tokenId) {
+        QueueToken token = this.findByTokenId(tokenId);
+        this.expireQueueToken(token);
     }
 }

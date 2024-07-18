@@ -6,7 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
 import java.util.*;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
@@ -41,7 +43,7 @@ class QueueTokenServiceTest {
                 .thenReturn(Optional.of(validToken));
 
         // when
-        QueueToken result = queueTokenService.isValidToken(concertId, tokenId);
+        QueueToken result = queueTokenService.validateActiveToken(concertId, tokenId);
 
         // then
         assertEquals(validToken, result);
@@ -60,7 +62,7 @@ class QueueTokenServiceTest {
 
         // when & then
         assertThrows(IllegalArgumentException.class, () -> {
-            queueTokenService.isValidToken(concertId, invalidTokenId);
+            queueTokenService.validateActiveToken(concertId, invalidTokenId);
         });
     }
 
@@ -79,7 +81,7 @@ class QueueTokenServiceTest {
 
         // when & then
         assertThrows(IllegalArgumentException.class, () -> {
-            queueTokenService.isValidToken(concertId, inactiveTokenId);
+            queueTokenService.validateActiveToken(concertId, inactiveTokenId);
         });
     }
 

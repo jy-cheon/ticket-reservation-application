@@ -27,12 +27,7 @@ public class QueueTokenRepositoryImpl implements QueueTokenRepository {
 
     @Override
     public QueueToken save(QueueToken queueToken) {
-        QueueTokenEntity entity = new QueueTokenEntity();
-        entity.setUserId(queueToken.getUserId());
-        entity.setConcertId(queueToken.getConcertId());
-        entity.setStatus(queueToken.getStatus());
-        entity.setExpiredAt(queueToken.getExpiredAt());
-
+        QueueTokenEntity entity = new QueueTokenEntity(queueToken);
         return queueTokenJpaRepository.save(entity).toQueueToken();
     }
 
@@ -77,5 +72,11 @@ public class QueueTokenRepositoryImpl implements QueueTokenRepository {
     public Optional<QueueToken> findByTokenId(Long tokenId) {
         return queueTokenJpaRepository.findById(tokenId).stream()
                 .map(QueueTokenEntity::toQueueToken).findAny();
+    }
+
+
+    @Override
+    public Long findWaitingAheadCount(Long concertId, Long sequenceId, TokenStatus status) {
+        return queueTokenJpaRepository.findWaitingAheadCount(concertId, sequenceId, status);
     }
 }

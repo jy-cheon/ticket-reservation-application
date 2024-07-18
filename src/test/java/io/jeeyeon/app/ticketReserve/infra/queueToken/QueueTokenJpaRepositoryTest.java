@@ -1,6 +1,5 @@
 package io.jeeyeon.app.ticketReserve.infra.queueToken;
 
-import io.jeeyeon.app.ticketReserve.domain.queueToken.QueueTokenRepository;
 import io.jeeyeon.app.ticketReserve.domain.queueToken.TokenStatus;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
