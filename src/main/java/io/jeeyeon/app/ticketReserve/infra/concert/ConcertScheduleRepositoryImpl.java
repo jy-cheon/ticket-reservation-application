@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -23,8 +24,10 @@ public class ConcertScheduleRepositoryImpl implements ConcertScheduleRepository 
     }
 
     @Override
-    public ConcertSchedule findByConcertIdAndConcertDate(Long concertId, LocalDateTime date) {
-        ConcertScheduleEntity concertScheduleEntity = concertScheduleJpaRepository.findByConcertIdAndConcertDate(concertId, date);
-        return concertScheduleEntity.toConcertSchedule();
+    public Optional<ConcertSchedule> findByConcertIdAndConcertDate(Long concertId, LocalDateTime date) {
+        Optional<ConcertScheduleEntity> concertScheduleEntity = concertScheduleJpaRepository.findByConcertIdAndConcertDate(concertId, date);
+        return concertScheduleEntity.stream()
+                .map(ConcertScheduleEntity::toConcertSchedule)
+                .findAny();
     }
 }

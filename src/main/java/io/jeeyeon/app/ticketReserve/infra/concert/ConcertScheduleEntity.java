@@ -21,7 +21,18 @@ public class ConcertScheduleEntity {
     private Long concertId;
     private LocalDateTime concertDate;
     private String location;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        updatedAt = LocalDateTime.now();
+    }
     public ConcertSchedule toConcertSchedule() {
         ConcertSchedule schedule = new ConcertSchedule();
         schedule.setConcertScheduleId(this.concertScheduleId);

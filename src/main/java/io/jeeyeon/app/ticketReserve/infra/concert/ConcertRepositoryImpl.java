@@ -16,16 +16,23 @@ public class ConcertRepositoryImpl implements ConcertRepository {
 
     @Override
     public Optional<Concert> findByConcertId(Long concertId) {
-        Optional<ConcertEntity> c = concertJpaRepository.findById(concertId);
-        Optional<Concert> cc = c.stream().map(ConcertEntity::toConcert)
+        Optional<ConcertEntity> concertEntity = concertJpaRepository.findById(concertId);
+        return concertEntity.stream()
+                .map(ConcertEntity::toConcert)
                 .findAny();
-
-        return cc;
     }
 
     @Override
     public List<Concert> findAll() {
         List<ConcertEntity> concertEntities = concertJpaRepository.findAll();
+        return concertEntities.stream()
+                .map(ConcertEntity::toConcert)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Concert> findConcertsBeforeCurrentDate() {
+        List<ConcertEntity> concertEntities = concertJpaRepository.findConcertsBeforeCurrentDate();
         return concertEntities.stream()
                 .map(ConcertEntity::toConcert)
                 .collect(Collectors.toList());
