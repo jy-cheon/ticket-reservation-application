@@ -8,9 +8,13 @@ import java.util.Optional;
 
 @Repository
 public interface ReservationRepository {
-    void save(Reservation reservation);
+    Reservation save(Reservation reservation);
+
+    void saveAll(List<Reservation> reservations);
 
     List<Reservation> findUnpaidReservations(LocalDateTime fiveMinutesAgo);
 
     Optional<Reservation> findById(Long reservationId);
+
+    List<Reservation> findAll();
 }

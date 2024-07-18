@@ -1,13 +1,15 @@
-package io.jeeyeon.app.ticketReserve.presentation.req;
+package io.jeeyeon.app.ticketReserve.interfaces.presentation.req;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class ReserveSeatRequest {
     @Schema(description = "유저 아이디", example = "guppy4411")
     private String userId;
