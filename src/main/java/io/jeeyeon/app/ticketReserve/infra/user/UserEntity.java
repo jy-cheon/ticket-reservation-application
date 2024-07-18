@@ -18,13 +18,13 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
-    private Long balance;
+    private Integer balance;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
     public UserEntity(Long userId) {
         this.userId = userId;
-        this.balance = 0l;
+        this.balance = 0;
     }
 
     public UserEntity(User user) {
