@@ -1,33 +1,39 @@
 package io.jeeyeon.app.ticketReserve.application;
 
+import io.jeeyeon.app.ticketReserve.domain.concert.ConcertService;
 import io.jeeyeon.app.ticketReserve.domain.queueToken.QueueToken;
+import io.jeeyeon.app.ticketReserve.domain.queueToken.QueueTokenRepository;
 import io.jeeyeon.app.ticketReserve.domain.queueToken.QueueTokenService;
 import io.jeeyeon.app.ticketReserve.domain.user.UserService;
-import io.jeeyeon.app.ticketReserve.domain.concert.ConcertService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.util.Arrays;
 import java.util.List;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 @SpringBootTest
 public class TokenManagerFacadeTest {
 
     @Autowired
-    private TokenManagerFacade facade;
+    private TokenManagerFacade tokenManagerFacade;
 
-    @MockBean
+    @Autowired
+    private QueueTokenRepository queueTokenRepository;
+
+    @Autowired
     private QueueTokenService queueTokenService;
 
-    @MockBean
+    @Autowired
     private UserService userService;
 
-    @MockBean
+    @Autowired
     private ConcertService concertService;
 
     @Test
@@ -38,17 +44,11 @@ public class TokenManagerFacadeTest {
         Long concertId = 1L;
         QueueToken mockToken = new QueueToken(1L, userId, concertId);
 
-        // mockito stubbing
-        when(userService.exists(userId)).thenReturn(true);
-        when(queueTokenService.createToken(userId, concertId)).thenReturn(mockToken);
-
         // when
-        Long tokenId = facade.issueToken(userId, concertId);
+        Long tokenId = tokenManagerFacade.issueToken(userId, concertId);
 
         // then
         assertEquals(mockToken.getTokenId(), tokenId);
-        verify(userService, times(1)).exists(userId);
-        verify(queueTokenService, times(1)).createToken(userId, concertId);
     }
 
     @Test
@@ -58,17 +58,32 @@ public class TokenManagerFacadeTest {
         Long userId = 999L;
         Long concertId = 1L;
 
-        // mockito stubbing
-        when(userService.exists(userId)).thenReturn(false);
-
         // when, then
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
-                () -> facade.issueToken(userId, concertId));
+                () -> tokenManagerFacade.issueToken(userId, concertId));
 
         assertEquals("User with userId " + userId + " does not exist", exception.getMessage());
-        verify(userService, times(1)).exists(userId);
-        verifyNoInteractions(queueTokenService); // queueTokenService는 호출되지 않아야 함
     }
+
+    @Test
+    @DisplayName("토큰 조회 테스트")
+    public void testGetTokenInfo() {
+        // given
+        long concertId = 1;
+        long sequenceId = 3;
+        long userId = 2;
+        QueueToken token = queueTokenRepository.save(new QueueToken(userId, concertId, sequenceId));
+
+        // when
+        QueueToken tokenInfo = tokenManagerFacade.getTokenInfo(token.getTokenId());
+
+        // then
+        assertEquals(1l, tokenInfo.getConcertId());
+        assertEquals(2l, tokenInfo.getUserId());
+        assertEquals(3l, tokenInfo.getSequenceId());
+        assertEquals(1l, tokenInfo.getTokenId());
+    }
+
 
     @Test
     @DisplayName("토큰 활성화 테스트")
@@ -77,10 +92,10 @@ public class TokenManagerFacadeTest {
         List<Long> concertIds = Arrays.asList(1L, 2L, 3L);
 
         // when
-        facade.activateQueueTokens();
+        tokenManagerFacade.activateQueueTokens();
 
         // then
-        verify(concertService, times(1)).getConcertIds();
+        verify(concertService, times(1)).getAvailableConcertIds();
         verify(queueTokenService, times(1)).activateQueueTokens(concertIds);
     }
 
@@ -88,7 +103,7 @@ public class TokenManagerFacadeTest {
     @DisplayName("토큰 만료 테스트")
     public void testExpireQueueTokens() {
         // when
-        facade.expireQueueTokens();
+        tokenManagerFacade.expireQueueTokens();
 
         // then
         verify(queueTokenService, times(1)).expireQueueTokens();
