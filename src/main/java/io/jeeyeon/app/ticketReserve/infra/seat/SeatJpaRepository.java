@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface SeatJpaRepository extends JpaRepository<SeatEntity, Long> {
@@ -16,7 +17,7 @@ public interface SeatJpaRepository extends JpaRepository<SeatEntity, Long> {
 
     List<SeatEntity> findByConcertScheduleIdAndStatus(Long concertScheduleId, SeatStatus status);
 
-    SeatEntity findByConcertScheduleIdAndSeatNumber(Long scheduleId, String seatNumber);
+    Optional<SeatEntity> findByConcertScheduleIdAndSeatNumber(Long scheduleId, String seatNumber);
 
     @Transactional
     @Modifying
