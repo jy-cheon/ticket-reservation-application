@@ -39,11 +39,3 @@ VALUES
     (8,3,'B03',5000,'AVAILABLE',now(),now()),
     (9,1,'C01',5000,'AVAILABLE',now(),now()),
     (10,1,'C02',5000,'AVAILABLE',now(),now());
-
-INSERT INTO reservation (reservation_id, seat_id, token_id, status, created_at, updated_at)
-VALUES
-    (1,3,5,'RESERVED',now(),now()),
-    (2,5,6,'RESERVED','2024-07-05 10:00:00',now()),
-    (3,8,2,'CANCELLED','2024-07-05 10:00:00',now());
--- status : RESERVED, CONFIRMED, CANCELLED
-
