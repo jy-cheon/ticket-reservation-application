@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -28,7 +29,7 @@ class PaymentServiceTest {
     public void testSavePayment() {
         // given
         Long reservationId = 1L;
-        Long ticketPrice = 5000L;
+        Integer ticketPrice = 5000;
 
         // when
         paymentService.save(reservationId, ticketPrice);

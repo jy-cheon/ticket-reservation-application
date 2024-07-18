@@ -1,5 +1,8 @@
 package io.jeeyeon.app.ticketReserve.application;
 
+import io.jeeyeon.app.ticketReserve.domain.common.exception.BaseException;
+import io.jeeyeon.app.ticketReserve.domain.common.exception.ErrorType;
+import io.jeeyeon.app.ticketReserve.domain.payment.Payment;
 import io.jeeyeon.app.ticketReserve.domain.payment.PaymentService;
 import io.jeeyeon.app.ticketReserve.domain.queueToken.QueueTokenService;
 import io.jeeyeon.app.ticketReserve.domain.reservation.Reservation;
@@ -8,7 +11,6 @@ import io.jeeyeon.app.ticketReserve.domain.seat.Seat;
 import io.jeeyeon.app.ticketReserve.domain.seat.SeatService;
 import io.jeeyeon.app.ticketReserve.domain.seat.SeatStatus;
 import io.jeeyeon.app.ticketReserve.domain.user.UserService;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -22,18 +24,14 @@ public class PaymentFacade {
     private final UserService userService;
 
     // 결제
-    public void processPayment(Long reservationId, Long userId) throws Exception {
+    public Payment processPayment(Long reservationId, Long userId) throws Exception {
         // 예약 정보 가져오기
         Reservation reservation = reservationService.findById(reservationId)
-                .orElseThrow(() -> new EntityNotFoundException("Reservation not found with ID: " + reservationId));
-
-        // 토큰 정보 확인
-        queueTokenService.verifyUser(reservation.getTokenId(), userId);
+                .orElseThrow(() -> new BaseException(ErrorType.ENTITY_NOT_FOUND));
 
         // 좌석 정보 가져오기
         Seat seat = seatService.findById(reservation.getSeatId())
-                .orElseThrow(() -> new EntityNotFoundException("Seat not found with ID: " + reservation.getSeatId()));
-
+                .orElseThrow(() -> new BaseException(ErrorType.ENTITY_NOT_FOUND));
 
         // 유저 잔액 차감
         userService.deductBalance(userId, seat.getTicketPrice());
@@ -44,8 +42,10 @@ public class PaymentFacade {
         // 예약 상태 변경
         reservationService.confirm(reservation);
 
-        // 결제 내역 저장
-        paymentService.save(reservationId, seat.getTicketPrice());
+        // 토큰 만료
+        queueTokenService.expireQueueToken(reservation.getTokenId());
 
+        // 결제 내역 저장
+        return paymentService.save(reservationId, seat.getTicketPrice());
     }
 }

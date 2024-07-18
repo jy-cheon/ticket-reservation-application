@@ -19,12 +19,22 @@ public class PaymentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long paymentId;
     private Long reservationId;
-    private Long amount;
+    private Integer amount;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
     public PaymentEntity(Payment payment) {
         this.reservationId = payment.getReservationId();
         this.amount = payment.getAmount();
+    }
+
+    public Payment toPayment() {
+        Payment payment = new Payment();
+        payment.setPaymentId(this.paymentId);
+        payment.setReservationId(this.reservationId);
+        payment.setAmount(this.amount);
+        payment.setCreatedAt(this.createdAt);
+        payment.setUpdatedAt(this.updatedAt);
+        return payment;
     }
 }

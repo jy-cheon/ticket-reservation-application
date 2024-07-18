@@ -21,7 +21,7 @@ class PaymentJpaRepositoryTest {
         PaymentEntity entity = new PaymentEntity();
         entity.setPaymentId(1L);
         entity.setReservationId(2L);
-        entity.setAmount(10000L);
+        entity.setAmount(10000);
 
         //when
         PaymentEntity save = paymentJpaRepository.save(entity);
