@@ -9,8 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.transaction.annotation.Transactional;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @Transactional
 @SpringBootTest
 class UserManagerFacadeTest {
@@ -24,7 +22,7 @@ class UserManagerFacadeTest {
     void test(){
         //given
         Long userId = 1L;
-        Long amount = 1000L;
+        Integer amount = 1000;
         //when
         User user = userManagerFacade.chargeBalance(userId, amount);
 
@@ -39,7 +37,7 @@ class UserManagerFacadeTest {
         //given
         Long userId = 3L;
         //when
-        Long balance = userManagerFacade.checkBalance(userId);
+        Integer balance = userManagerFacade.checkBalance(userId);
 
         //then
         Assertions.assertEquals(3000,balance);

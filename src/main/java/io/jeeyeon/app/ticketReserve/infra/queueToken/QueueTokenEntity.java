@@ -29,9 +29,19 @@ public class QueueTokenEntity {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
+    public QueueTokenEntity(QueueToken queueToken) {
+        this.tokenId = queueToken.getTokenId();
+        this.userId = queueToken.getUserId();
+        this.concertId = queueToken.getConcertId();
+        this.sequenceId = queueToken.getSequenceId();
+        this.status = queueToken.getStatus();
+        this.activatedAt =  queueToken.getActivatedAt();
+        this.expiredAt = queueToken.getExpiredAt();
+    }
+
     public QueueToken toQueueToken() {
         QueueToken token = new QueueToken();
-        token.setTokenId(this.getTokenId());
+        token.setTokenId(this.tokenId);
         token.setUserId(this.userId);
         token.setConcertId(this.concertId);
         token.setSequenceId(this.sequenceId);

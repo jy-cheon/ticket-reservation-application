@@ -1,4 +1,4 @@
-package io.jeeyeon.app.ticketReserve.presentation.res;
+package io.jeeyeon.app.ticketReserve.interfaces.presentation.res;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,6 +11,6 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 public class PaymentResponse {
-    private String paymentId;
+    private Long paymentId;
     private LocalDateTime paymentTime;
 }

@@ -13,7 +13,7 @@ public interface SeatRepository {
 
     List<Seat> findByConcertScheduleIdAndStatus(Long concertScheduleId, SeatStatus status);
 
-    Seat findByConcertScheduleIdAndSeatNumber(Long scheduleId, String seatNumber);
+    Optional<Seat> findByConcertScheduleIdAndSeatNumber(Long scheduleId, String seatNumber);
 
     Seat save(Seat seat);
 

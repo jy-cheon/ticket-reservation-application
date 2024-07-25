@@ -23,4 +23,7 @@ public interface QueueTokenRepository {
     Optional<QueueToken> findByTokenIdAndConcertId(Long concertId, Long tokenId);
 
     Optional<QueueToken> findByTokenId(Long tokenId);
+
+    Long findWaitingAheadCount(Long concertId, Long sequenceId, TokenStatus status);
+
 }

@@ -22,15 +22,15 @@ public class SeatRepositoryImpl implements SeatRepository {
 
     @Override
     public List<Seat> findByConcertScheduleIdAndStatus(Long concertScheduleId, SeatStatus status) {
-        return List.of();
-//
-//        return seatJpaRepository.findByConcertScheduleIdAndStatus(concertScheduleId, status).stream()
-//                .map(SeatEntity::toSeat).collect(Collectors.toList());
+        return seatJpaRepository.findByConcertScheduleIdAndStatus(concertScheduleId, status).stream()
+                .map(SeatEntity::toSeat).collect(Collectors.toList());
     }
 
     @Override
-    public Seat findByConcertScheduleIdAndSeatNumber(Long scheduleId, String seatNumber) {
-        return seatJpaRepository.findByConcertScheduleIdAndSeatNumber(scheduleId, seatNumber).toSeat();
+    public Optional<Seat> findByConcertScheduleIdAndSeatNumber(Long scheduleId, String seatNumber) {
+        return seatJpaRepository.findByConcertScheduleIdAndSeatNumber(scheduleId, seatNumber).stream()
+                .map(SeatEntity::toSeat)
+                .findAny();
     }
 
     @Override

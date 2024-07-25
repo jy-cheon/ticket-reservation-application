@@ -12,12 +12,12 @@ public class UserManagerFacade {
     private final UserService userService;
 
     // 잔액 충전
-    public User chargeBalance(Long userId, Long amount) {
+    public User chargeBalance(Long userId, Integer amount) {
         return userService.chargeBalance(userId, amount);
     }
 
     // 잔액 조회
-    public Long checkBalance(Long userId) {
+    public Integer checkBalance(Long userId) {
         return userService.checkBalance(userId);
     }
 

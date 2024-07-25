@@ -9,6 +9,9 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
@@ -38,7 +41,7 @@ public class ReservationServiceTest {
 
         Seat reservedSeat = new Seat(scheduleId, seatNumber, SeatStatus.RESERVED);
         when(seatRepository.findByConcertScheduleIdAndSeatNumber(scheduleId, seatNumber))
-                .thenReturn(reservedSeat);
+                .thenReturn(Optional.of(reservedSeat));
 
         // when & then
         assertThrows(IllegalStateException.class, () -> {

@@ -14,8 +14,10 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public Optional<User> findByUserId(Long userId) {
-        UserEntity userEntity = userJpaRepository.findByUserId(userId);
-        return Optional.ofNullable(userEntity.toUser());
+        Optional<UserEntity> userEntity = userJpaRepository.findById(userId);
+        return userEntity.stream()
+                .map(UserEntity::toUser)
+                .findAny();
     }
 
     @Override

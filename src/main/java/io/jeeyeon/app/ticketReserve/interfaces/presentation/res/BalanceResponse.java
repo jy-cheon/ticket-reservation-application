@@ -1,4 +1,4 @@
-package io.jeeyeon.app.ticketReserve.presentation.res;
+package io.jeeyeon.app.ticketReserve.interfaces.presentation.res;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,6 +9,6 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class BalanceResponse {
-    private String userId;
-    private int balance;
+    private Long userId;
+    private Integer balance;
 }

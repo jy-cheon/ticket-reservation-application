@@ -10,4 +10,6 @@ public interface ConcertRepository {
     Optional<Concert> findByConcertId(Long concertId);
 
     List<Concert> findAll();
+
+    List<Concert> findConcertsBeforeCurrentDate();
 }

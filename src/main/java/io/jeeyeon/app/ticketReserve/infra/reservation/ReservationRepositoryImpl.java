@@ -16,8 +16,18 @@ public class ReservationRepositoryImpl implements ReservationRepository {
     private final ReservationJpaRepository reservationJpaRepository;
 
     @Override
-    public void save(Reservation reservation) {
-        reservationJpaRepository.save(new ReservationEntity(reservation));
+    public Reservation save(Reservation reservation) {
+        return reservationJpaRepository.save(new ReservationEntity(reservation))
+                .toReservation();
+    }
+
+    @Override
+    public void saveAll(List<Reservation> reservations) {
+        var list = reservations.stream()
+                .map(ReservationEntity::new)
+                .collect(Collectors.toList());
+
+        reservationJpaRepository.saveAll(list);
     }
 
     @Override
@@ -32,5 +42,12 @@ public class ReservationRepositoryImpl implements ReservationRepository {
     public Optional<Reservation> findById(Long reservationId) {
         return reservationJpaRepository.findById(reservationId).stream()
                 .map(ReservationEntity::toReservation).findAny();
+    }
+
+    @Override
+    public List<Reservation> findAll() {
+        return reservationJpaRepository.findAll().stream()
+                .map(ReservationEntity::toReservation)
+                .collect(Collectors.toList());
     }
 }

@@ -18,7 +18,7 @@ public interface QueueTokenJpaRepository extends JpaRepository<QueueTokenEntity,
 
     List<QueueTokenEntity> findByUserIdAndConcertId(Long userId, Long concertId);
 
-    @Query(value = "SELECT COALESCE(MAX(sequenceId), 0) + 1 FROM QueueToken WHERE concertId = :concertId", nativeQuery = true)
+    @Query(value = "SELECT COALESCE(MAX(SEQUENCE_ID), 0) + 1 FROM QUEUE_TOKEN WHERE CONCERT_ID = :concertId", nativeQuery = true)
     Long getNextSequenceIdForConcert(@Param("concertId") Long concertId);
 
     List<QueueTokenEntity> findByStatusAndExpiredAtBefore(TokenStatus status, LocalDateTime now);
@@ -30,5 +30,10 @@ public interface QueueTokenJpaRepository extends JpaRepository<QueueTokenEntity,
             Pageable pageable
     );
 
-    Optional<QueueTokenEntity> findByTokenIdAndConcertId(Long concertId, Long tokenId);
+    @Query("SELECT q FROM QueueTokenEntity q WHERE q.concertId = :concertId AND q.tokenId = :tokenId")
+    Optional<QueueTokenEntity> findByTokenIdAndConcertId(@Param("concertId") Long concertId, @Param("tokenId") Long tokenId);
+
+    @Query("SELECT COUNT(t) FROM QueueTokenEntity t WHERE t.concertId = :concertId AND t.sequenceId < :sequenceId AND t.status = :status")
+    Long findWaitingAheadCount(Long concertId, Long sequenceId, TokenStatus status);
+
 }

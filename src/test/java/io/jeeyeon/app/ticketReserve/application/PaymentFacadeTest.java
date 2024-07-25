@@ -68,7 +68,7 @@ class PaymentFacadeTest {
         seatEntity.setSeatId(seatId);
         seatEntity.setSeatNumber(seatNumber);
         seatEntity.setStatus(SeatStatus.RESERVED);
-        seatEntity.setTicketPrice(500L);
+        seatEntity.setTicketPrice(500);
         seatJpaRepository.save(seatEntity);
     }
 

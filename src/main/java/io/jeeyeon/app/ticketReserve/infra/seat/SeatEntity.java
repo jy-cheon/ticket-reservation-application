@@ -21,7 +21,7 @@ public class SeatEntity {
     private Long seatId;
     private Long concertScheduleId;
     private String seatNumber;
-    private Long ticketPrice;
+    private Integer ticketPrice;
     @Enumerated(EnumType.STRING)
     private SeatStatus status;
     private LocalDateTime createdAt;

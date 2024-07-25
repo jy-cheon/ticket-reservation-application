@@ -4,10 +4,11 @@ import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface ConcertScheduleRepository {
     List<ConcertSchedule> findByConcertId(Long concertId);
 
-    ConcertSchedule findByConcertIdAndConcertDate(Long concertId, LocalDateTime date);
+    Optional<ConcertSchedule> findByConcertIdAndConcertDate(Long concertId, LocalDateTime date);
 }

@@ -22,11 +22,22 @@ public class ConcertEntity {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        updatedAt = LocalDateTime.now();
+    }
+
     public Concert toConcert() {
         Concert concert = new Concert();
-        concert.setConcertId(concertId);
-        concert.setConcertName(concertName);
+        concert.setConcertId(this.concertId);
+        concert.setConcertName(this.concertName);
+        concert.setCreatedAt(this.createdAt);
+        concert.setUpdatedAt(this.updatedAt);
         return concert;
-
     }
 }
