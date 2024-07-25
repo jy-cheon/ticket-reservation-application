@@ -26,7 +26,13 @@ public class ReservationService {
     public Reservation reserve(Long scheduleId, String seatNumber, Long tokenId) {
         // 좌석 유효성 체크
         Seat seat = seatRepository.findByConcertScheduleIdAndSeatNumber(scheduleId, seatNumber)
-                .orElseThrow(() -> new BaseException(ErrorType.ENTITY_NOT_FOUND));
+                .orElseThrow(() -> new BaseException(ErrorType.SEAT_ENTITY_NOT_FOUND));
+
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         // 좌석 예약(좌석배정)
         if (seat.isAvailable()) {
@@ -35,6 +41,12 @@ public class ReservationService {
         } else {
             log.warn("해당 예약은 이미 예약되었습니다. {}", seatNumber);
             throw new BaseException(ErrorType.NOT_AVAILABLE_SEAT);
+        }
+
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
         // 예약 저장

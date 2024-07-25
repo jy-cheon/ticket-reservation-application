@@ -11,6 +11,7 @@ public class Seat {
     private String seatNumber;
     private Integer ticketPrice;
     private SeatStatus status;
+    private int version;
 
     public Seat(Long scheduleId, String seatNumber, SeatStatus reserved) {
         this.concertScheduleId = scheduleId;
