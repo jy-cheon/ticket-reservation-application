@@ -22,6 +22,9 @@ public class UserEntity {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
+//    @Version
+    private int version;
+
     public UserEntity(Long userId) {
         this.userId = userId;
         this.balance = 0;
@@ -30,12 +33,14 @@ public class UserEntity {
     public UserEntity(User user) {
         this.userId = user.getUserId();
         this.balance = user.getBalance();
+        this.version = user.getVersion();
     }
 
     public User toUser() {
         User user = new User();
         user.setUserId(this.userId);
         user.setBalance(this.balance);
+        user.setVersion(this.version);
         return user;
     }
 

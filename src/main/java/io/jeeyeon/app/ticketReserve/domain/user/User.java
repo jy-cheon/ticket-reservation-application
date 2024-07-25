@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class User {
     private Long userId;
     private Integer balance;
+    private Integer version;
 
     public User chargeBalance(Integer amount) {
         this.setBalance(this.balance + amount);

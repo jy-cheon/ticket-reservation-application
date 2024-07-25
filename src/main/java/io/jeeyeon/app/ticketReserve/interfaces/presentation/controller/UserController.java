@@ -47,7 +47,7 @@ public class UserController {
             @PathVariable Long userId,
             @RequestBody ChargeRequest request) {
 
-        User user = userManagerFacade.chargeBalance(userId, request.getAmount());
+        User user = userManagerFacade.chargeBalancePessimistic(userId, request.getAmount());
         BalanceResponse response = new BalanceResponse(user.getUserId(), user.getBalance());
         return ResponseEntity.ok(ResponseDto.success(response));
 

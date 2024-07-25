@@ -12,8 +12,13 @@ public class UserManagerFacade {
     private final UserService userService;
 
     // 잔액 충전
-    public User chargeBalance(Long userId, Integer amount) {
-        return userService.chargeBalance(userId, amount);
+    public User chargeBalancePessimistic(Long userId, Integer amount) {
+        return userService.chargeBalancePessimistic(userId, amount);
+    }
+
+    // 잔액 충전
+    public User chargeBalanceOptimistic(Long userId, Integer amount) {
+        return userService.chargeBalanceOptimistic(userId, amount);
     }
 
     // 잔액 조회

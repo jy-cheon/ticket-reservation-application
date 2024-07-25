@@ -24,7 +24,7 @@ class UserManagerFacadeTest {
         Long userId = 1L;
         Integer amount = 1000;
         //when
-        User user = userManagerFacade.chargeBalance(userId, amount);
+        User user = userManagerFacade.chargeBalancePessimistic(userId, amount);
 
         //then
         Assertions.assertEquals(2000,user.getBalance());
