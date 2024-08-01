@@ -80,4 +80,26 @@ public class QueueTokenRedisRepository {
         String key = WAITING_TOKENS_KEY + ":" + concertId;
         return redisTemplate.getZSetSize(key);
     }
+
+    public void removeExpiredTokens(Long concertId, Long userId) {
+        String key = ACTIVE_TOKENS_KEY + ":" + concertId;
+        redisTemplate.deleteValueInSet(key, userId);
+    }
+
+    public Set<Long> getActiveTokens(Long concertId) {
+        String key = ACTIVE_TOKENS_KEY + ":" + concertId;
+        Set<Object> values = redisTemplate.getValuesInSet(key);
+
+        if (values != null) {
+            return values.stream()
+                    .map(o -> ((Integer) o).longValue())
+                    .collect(Collectors.toSet());
+        }
+        return Set.of();
+    }
+
+    public boolean hasKey(Long concertId, Long userId) {
+        String key = ACTIVE_TOKENS_KEY + ":" + concertId + ":" + userId;
+        return redisTemplate.hasKey(key);
+    }
 }

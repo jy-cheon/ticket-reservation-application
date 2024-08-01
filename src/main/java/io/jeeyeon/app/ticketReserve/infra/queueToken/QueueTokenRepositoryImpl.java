@@ -7,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
-
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -118,5 +117,17 @@ public class QueueTokenRepositoryImpl implements QueueTokenRepository {
     public long getWaitingTokensSize(Long concertId) {
         return queueTokenRedisRepository.getWaitingTokensSize(concertId);
     }
+    @Override
+    public void removeExpiredTokens(Long concertId, Long userId) {
+        queueTokenRedisRepository.removeExpiredTokens(concertId, userId);
+    }
+    @Override
+    public Set<Long> getActiveTokens(Long concertId) {
+        return queueTokenRedisRepository.getActiveTokens(concertId);
+    }
 
+    @Override
+    public boolean hasKey(Long concertId, Long userId) {
+        return queueTokenRedisRepository.hasKey(concertId, userId);
+    }
 }

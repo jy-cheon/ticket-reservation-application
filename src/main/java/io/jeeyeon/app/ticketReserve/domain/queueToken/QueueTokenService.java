@@ -6,7 +6,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
@@ -126,7 +125,18 @@ public class QueueTokenService {
             expireQueueToken(token);
         }
     }
-
+    public void removeExpiredTokens(List<Long> concertIds) {
+        for (Long concertId : concertIds) {
+            Set<Long> activeTokens = queueTokenRepository.getActiveTokens(concertId);
+            if (activeTokens != null) {
+                activeTokens.forEach(token -> {
+                    if (!queueTokenRepository.hasKey(concertId, token)) {
+                        queueTokenRepository.removeExpiredTokens(concertId, token);
+                    }
+                });
+            }
+        }
+    }
     // 토큰 단건 만료 처리
     private void expireQueueToken(QueueToken token) {
         token.expireQueueToken();
@@ -146,7 +156,7 @@ public class QueueTokenService {
 
     public QueueToken validateActiveToken(Long concertId, Long tokenId) {
         // 토큰 유효성 검증
-         QueueToken token = queueTokenRepository.findByTokenIdAndConcertId(concertId, tokenId)
+        QueueToken token = queueTokenRepository.findByTokenIdAndConcertId(concertId, tokenId)
                 .orElseThrow(() -> new BaseException(ErrorType.INVALID_TOKEN));
 
         token.validateActiveToken();
@@ -175,10 +185,6 @@ public class QueueTokenService {
     public void expireQueueToken(Long tokenId) {
         QueueToken token = this.findByTokenId(tokenId);
         this.expireQueueToken(token);
-    }
-
-    public void expireQueueToken(Long concertId, Long userId) {
-        queueTokenRepository.removeExpiredTokens(concertId, userId);
     }
 
     public QueueToken getTokenInfo(Long concertId, Long userId) {

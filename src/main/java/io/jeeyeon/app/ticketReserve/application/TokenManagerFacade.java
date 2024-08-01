@@ -49,12 +49,14 @@ public class TokenManagerFacade {
 
     // 토큰 만료(퇴장)
     public void expireQueueTokens() {
-        queueTokenService.expireQueueTokens();
+        List<Long> concertIds = concertService.getAvailableConcertIds();
+        queueTokenService.removeExpiredTokens(concertIds);
     }
 
     // 토큰 활성화 유효성 검증
     public QueueToken validateActiveToken(Long concertId, Long tokenId) {
         return queueTokenService.validateActiveToken(concertId, tokenId);
     }
+
 
 }
