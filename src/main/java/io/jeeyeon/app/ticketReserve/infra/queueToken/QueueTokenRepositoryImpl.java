@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -101,5 +102,21 @@ public class QueueTokenRepositoryImpl implements QueueTokenRepository {
         return queueTokenRedisRepository.expireWaitingToken(concertId, userId);
     }
 
+    @Override
+    public Set<Long> getOldestWaitingTokens(Long concertId, int count) {
+        return queueTokenRedisRepository.getOldestMembers(concertId, count);
+    }
+    @Override
+    public void createActiveToken(Long concertId, Set<Long> userIds) {
+        queueTokenRedisRepository.createActiveToken(concertId, userIds);
+    }
+    @Override
+    public void removeWaitingToken(Long concertId, Set<Long> userIds) {
+        queueTokenRedisRepository.removeWaitingToken(concertId, userIds);
+    }
+    @Override
+    public long getWaitingTokensSize(Long concertId) {
+        return queueTokenRedisRepository.getWaitingTokensSize(concertId);
+    }
 
 }

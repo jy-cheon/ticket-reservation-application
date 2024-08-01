@@ -36,19 +36,55 @@ public class QueueTokenService {
         queueTokenRepository.save(activatedToken);
     }
 
-
+    /**
+     * 대기열에서 활성 대기열로 토큰을 비율에 맞게 이동합니다.
+     *
+     * @param concertIds 활성화할 콘서트 ID 리스트
+     * @return 총 활성화된 토큰 수
+     */
     public long activateQueueTokens(List<Long> concertIds) {
-        long total = 0;
+        // 1. 총 대기열 사이즈 수집
+        Map<Long, Long> concertQueueSizes = new HashMap<>();
+        long totalQueueSize = 0;
+
         for (Long concertId : concertIds) {
-            total += activateQueueTokens(concertId);
+            long queueSize = getWaitingTokensSize(concertId);
+            concertQueueSizes.put(concertId, queueSize);
+            totalQueueSize += queueSize;
         }
-        return total;
+
+        // 2. 각 콘서트별 비율에 따라 활성화할 인원 수 계산
+        Map<Long, Integer> activationCounts = new HashMap<>();
+        int totalActivated = 0;
+
+        for (Map.Entry<Long, Long> entry : concertQueueSizes.entrySet()) {
+            Long concertId = entry.getKey();
+            long queueSize = entry.getValue();
+            // 비율에 따라 초기 활성화 수 계산
+            int initialActivationCount = (int) Math.round((double) queueSize / totalQueueSize * MAX_ACTIVATION_COUNT);
+            activationCounts.put(concertId, Math.max(initialActivationCount, 1)); // 최소 1명 보장
+        }
+
+        // 3. 토큰 이동 및 결과 집계
+        for (Map.Entry<Long, Integer> entry : activationCounts.entrySet()) {
+            Long concertId = entry.getKey();
+            int count = entry.getValue();
+            Set<Long> tokens = getOldestWaitingTokens(concertId, count);
+            activateQueueToken(concertId, tokens);
+            totalActivated += tokens.size();
+        }
+
+        return totalActivated;
+    }
+
+    public long getWaitingTokensSize(Long concertId) {
+        return queueTokenRepository.getWaitingTokensSize(concertId);
     }
 
     // 대기 토큰 활성화
     private long activateQueueTokens(Long concertId) {
         List<QueueToken> currentActiveTokens = getActiveTokens(concertId);
-        long activatableTokenCount = MAX_ACTIVE_TOKENS - currentActiveTokens.size();
+        long activatableTokenCount = MAX_ACTIVATION_COUNT - currentActiveTokens.size();
 
         if (activatableTokenCount == 0) {
             return 0;
@@ -59,6 +95,19 @@ public class QueueTokenService {
             activateQueueToken(token);
         }
         return waitingTokens.size();
+    }
+
+    private Set<Long> getOldestWaitingTokens(Long concertId, int count) {
+        Set<Long> tokens = queueTokenRepository.getOldestWaitingTokens(concertId, count);
+        return tokens;
+    }
+
+    private void activateQueueToken(Long concertId, Set<Long> userIds) {
+        if (ObjectUtils.isNotEmpty(userIds)) {
+            queueTokenRepository.createActiveToken(concertId, userIds);
+            queueTokenRepository.removeWaitingToken(concertId, userIds);
+        }
+        log.info("concertId : {}, userIds : {} is added to active token", concertId, userIds);
     }
 
     private List<QueueToken> findWaitingTokens(Long concertId, TokenStatus status, long remainTokensToActivate) {
