@@ -24,6 +24,8 @@ public class SeatEntity {
     private Integer ticketPrice;
     @Enumerated(EnumType.STRING)
     private SeatStatus status;
+    @Version
+    private int version;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -33,6 +35,7 @@ public class SeatEntity {
         this.seatNumber = seat.getSeatNumber();
         this.ticketPrice = seat.getTicketPrice();
         this.status = seat.getStatus();
+        this.version = seat.getVersion();
     }
     public Seat toSeat() {
         Seat seat = new Seat();
@@ -41,6 +44,7 @@ public class SeatEntity {
         seat.setSeatNumber(this.seatNumber);
         seat.setTicketPrice(this.ticketPrice);
         seat.setStatus(this.status);
+        seat.setVersion(this.version);
         return seat;
     }
 
