@@ -38,7 +38,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public User save(User user) {
-        UserEntity save = userJpaRepository.save(new UserEntity(user));
+        UserEntity save = userJpaRepository.saveAndFlush(new UserEntity(user));
         User userModel = new User();
         userModel.setUserId(save.getUserId());
         userModel.setBalance(save.getBalance());

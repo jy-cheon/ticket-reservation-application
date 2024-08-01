@@ -3,6 +3,7 @@ package io.jeeyeon.app.ticketReserve.application;
 import io.jeeyeon.app.ticketReserve.domain.user.User;
 import io.jeeyeon.app.ticketReserve.domain.user.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -18,7 +19,16 @@ public class UserManagerFacade {
 
     // 잔액 충전
     public User chargeBalanceOptimistic(Long userId, Integer amount) {
-        return userService.chargeBalanceOptimistic(userId, amount);
+        int RETRY_MAX = Integer.MAX_VALUE;
+        int tryCnt = 0;
+        while (tryCnt < RETRY_MAX) {
+            try {
+                return userService.chargeBalanceOptimistic(userId, amount);
+            } catch (ObjectOptimisticLockingFailureException e) {
+                tryCnt += 1;
+            }
+        }
+        throw new RuntimeException("완전실패했어요.....");
     }
 
     // 잔액 조회
