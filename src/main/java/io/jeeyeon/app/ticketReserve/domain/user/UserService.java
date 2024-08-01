@@ -6,7 +6,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,24 +33,11 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    // 낙관적락 테스트
     @Transactional
     public User chargeBalanceOptimistic(Long userId, Integer amount) {
-        int RETRY_MAX = Integer.MAX_VALUE;
-        int tryCnt = 0;
-
-        while (tryCnt < RETRY_MAX) {
-            try {
-                entityManager.clear();
-                User user = getUserWithOptimisticLock(userId);
-                user = user.chargeBalance(amount);
-                return userRepository.save(user);
-            } catch (ObjectOptimisticLockingFailureException e) {
-                log.info("retry~~~~~~~~~~~~~ " + tryCnt);
-                tryCnt += 1;
-            }
-        }
-        throw new RuntimeException("잔액 충전 실패!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        User user = getUserWithOptimisticLock(userId);
+        user = user.chargeBalance(amount);
+        return userRepository.save(user);
     }
 
     public User deductBalance(Long userId, Integer price) throws Exception {
