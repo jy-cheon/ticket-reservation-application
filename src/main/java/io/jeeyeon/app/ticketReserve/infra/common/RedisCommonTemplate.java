@@ -34,6 +34,7 @@ public class RedisCommonTemplate {
         valueOps = redisTemplate.opsForValue();
     }
 
+
     public void setValue(String key, Object value) {
         redisTemplate.opsForValue().set(key, value);
     }

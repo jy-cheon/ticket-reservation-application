@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 @Repository
 public class QueueTokenRepositoryImpl implements QueueTokenRepository {
     private final QueueTokenJpaRepository queueTokenJpaRepository;
+    private final QueueTokenRedisRepository queueTokenRedisRepository;
     @Override
     public List<QueueToken> findByConcertIdAndStatus(Long concertId, TokenStatus status) {
         List<QueueTokenEntity> entityList = queueTokenJpaRepository.findByConcertIdAndStatus(concertId, status);
@@ -26,9 +27,10 @@ public class QueueTokenRepositoryImpl implements QueueTokenRepository {
     }
 
     @Override
-    public QueueToken save(QueueToken queueToken) {
+    public void save(QueueToken queueToken) {
         QueueTokenEntity entity = new QueueTokenEntity(queueToken);
-        return queueTokenJpaRepository.save(entity).toQueueToken();
+        queueTokenRedisRepository.createWaitingToken(queueToken.getConcertId(), queueToken.getUserId());
+//        return queueTokenJpaRepository.save(entity).toQueueToken();
     }
 
     @Override
@@ -79,4 +81,25 @@ public class QueueTokenRepositoryImpl implements QueueTokenRepository {
     public Long findWaitingAheadCount(Long concertId, Long sequenceId, TokenStatus status) {
         return queueTokenJpaRepository.findWaitingAheadCount(concertId, sequenceId, status);
     }
+
+    public Long findWaitingAheadCount_redis(Long concertId, Long userId) {
+        return  queueTokenRedisRepository.findWaitingAheadCount(concertId, userId);
+    }
+
+    @Override
+    public boolean isWaitingToken(Long concertId, Long userId) {
+        return queueTokenRedisRepository.isWaitingToken(concertId, userId);
+    }
+
+    @Override
+    public boolean isActiveToken(Long concertId, Long userId) {
+        return queueTokenRedisRepository.isActiveToken(concertId, userId);
+    }
+
+    @Override
+    public boolean expireWaitingToken(Long concertId, Long userId) {
+        return queueTokenRedisRepository.expireWaitingToken(concertId, userId);
+    }
+
+
 }

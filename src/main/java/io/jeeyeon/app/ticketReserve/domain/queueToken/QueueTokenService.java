@@ -4,33 +4,36 @@ import io.jeeyeon.app.ticketReserve.domain.common.exception.BaseException;
 import io.jeeyeon.app.ticketReserve.domain.common.exception.ErrorType;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 @Slf4j
 @RequiredArgsConstructor
 @Service
 public class QueueTokenService {
     private final QueueTokenRepository queueTokenRepository;
-    private static final int MAX_ACTIVE_TOKENS = 100; // 최대 활성화 가능한 토큰 수
+    private static final int MAX_ACTIVATION_COUNT = 3; // 최대 활성화 가능한 토큰 수
 
-    public QueueToken createToken(Long userId, Long concertId) {
+    public void createToken(Long userId, Long concertId) {
         // 콘서트별 순서 id 조회
         Long nextSequenceId = queueTokenRepository.getNextSequenceIdForConcert(concertId);
 
         // 대기 토큰 생성
         QueueToken token = new QueueToken(userId, concertId, nextSequenceId);
 
-        QueueToken newToken = queueTokenRepository.save(token);
-        return newToken;
+        queueTokenRepository.save(token);
     }
 
     // 대기 토큰 활성화
-    public QueueToken activateQueueToken(QueueToken queueToken) {
+    public void activateQueueToken(QueueToken queueToken) {
         QueueToken activatedToken = queueToken.activateQueueToken();
-        return queueTokenRepository.save(activatedToken);
+        queueTokenRepository.save(activatedToken);
     }
 
 
@@ -106,22 +109,55 @@ public class QueueTokenService {
                 .orElseThrow(() -> new BaseException(ErrorType.ENTITY_NOT_FOUND));
     }
 
-    public QueueToken getTokenInfo(Long tokenId) {
-        QueueToken token = findByTokenId(tokenId);
-        if (token.isWaiting()) {
-            // 대기 번호 조회
-            long aheadCount = queueTokenRepository.findWaitingAheadCount(token.getConcertId(), token.getSequenceId(), token.getStatus());
-            log.info("대기 번호 조회 : {}",aheadCount);
-            // 대기 번호 설정
-            token.setAheadCount(aheadCount);
-        } else if (token.isActive()) {
-            token.setAheadCount(0l);
-        }
-        return token;
-    }
+//    public QueueToken getTokenInfo(Long tokenId) {
+//        QueueToken token = findByTokenId(tokenId);
+//        if (token.isWaiting()) {
+//            // 대기 번호 조회
+//            long aheadCount = queueTokenRepository.findWaitingAheadCount(token.getConcertId(), token.getSequenceId(), token.getStatus());
+//            log.info("대기 번호 조회 : {}", aheadCount);
+//            // 대기 번호 설정
+//            token.setAheadCount(aheadCount);
+//        } else if (token.isActive()) {
+//            token.setAheadCount(0l);
+//        }
+//        return token;
+//    }
 
     public void expireQueueToken(Long tokenId) {
         QueueToken token = this.findByTokenId(tokenId);
         this.expireQueueToken(token);
+    }
+
+    public void expireQueueToken(Long concertId, Long userId) {
+        queueTokenRepository.removeExpiredTokens(concertId, userId);
+    }
+
+    public QueueToken getTokenInfo(Long concertId, Long userId) {
+        QueueToken token = new QueueToken(concertId, userId);
+        boolean isActive;
+        boolean isWaiting;
+        boolean isExpired;
+        long aheadCount;
+
+        isActive = queueTokenRepository.isActiveToken(concertId, userId);
+        if (isActive) {
+            token.setActive();
+            return token;
+        }
+
+        isWaiting = queueTokenRepository.isWaitingToken(concertId, userId);
+        if (isWaiting) {
+            aheadCount =  queueTokenRepository.findWaitingAheadCount_redis(concertId, userId);
+            token.setWaiting(aheadCount);
+            return token;
+        }
+
+        isExpired = queueTokenRepository.expireWaitingToken(concertId, userId);
+        if (isExpired) {
+            token.setExpired();
+            return token;
+        }
+
+        throw new BaseException(ErrorType.INVALID_TOKEN);
     }
 }

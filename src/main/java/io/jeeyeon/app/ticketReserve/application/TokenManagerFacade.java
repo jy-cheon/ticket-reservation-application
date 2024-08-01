@@ -20,10 +20,10 @@ public class TokenManagerFacade {
     private final ConcertService concertService;
 
     // 토큰 발급
-    public Long issueToken(Long userId, Long concertId) {
+    public void issueToken(Long userId, Long concertId) {
         // 사용자 존재 여부 확인
         if (!userService.exists(userId)) {
-            throw new BaseException(ErrorType.ENTITY_NOT_FOUND);
+            throw new BaseException(ErrorType.USER_ENTITY_NOT_FOUND);
         }
         // 콘서트 존재 여부 확인
         if (!concertService.exists(concertId)) {
@@ -31,13 +31,12 @@ public class TokenManagerFacade {
         }
 
         // 토큰 발급 및 반환
-        QueueToken token = queueTokenService.createToken(userId, concertId);
-        return token.getTokenId();
+        queueTokenService.createToken(userId, concertId);
     }
 
-    // 토큰 조회(TODO : return dto 정리 필요)
-    public QueueToken getTokenInfo(Long tokenId) {
-        return queueTokenService.getTokenInfo(tokenId);
+    // 토큰 조회
+    public QueueToken getTokenInfo(Long concertId, Long userId) {
+        return queueTokenService.getTokenInfo(concertId, userId);
     }
 
     // 토큰 활성화(입장)
