@@ -168,23 +168,13 @@ public class QueueTokenService {
                 .orElseThrow(() -> new BaseException(ErrorType.ENTITY_NOT_FOUND));
     }
 
-//    public QueueToken getTokenInfo(Long tokenId) {
-//        QueueToken token = findByTokenId(tokenId);
-//        if (token.isWaiting()) {
-//            // 대기 번호 조회
-//            long aheadCount = queueTokenRepository.findWaitingAheadCount(token.getConcertId(), token.getSequenceId(), token.getStatus());
-//            log.info("대기 번호 조회 : {}", aheadCount);
-//            // 대기 번호 설정
-//            token.setAheadCount(aheadCount);
-//        } else if (token.isActive()) {
-//            token.setAheadCount(0l);
-//        }
-//        return token;
-//    }
-
     public void expireQueueToken(Long tokenId) {
         QueueToken token = this.findByTokenId(tokenId);
         this.expireQueueToken(token);
+    }
+
+    public void expireQueueToken(Long concertId, Long userId) {
+        queueTokenRepository.removeExpiredTokens(concertId, userId);
     }
 
     public QueueToken getTokenInfo(Long concertId, Long userId) {

@@ -2,6 +2,7 @@ package io.jeeyeon.app.ticketReserve.application;
 
 import io.jeeyeon.app.ticketReserve.domain.common.exception.BaseException;
 import io.jeeyeon.app.ticketReserve.domain.common.exception.ErrorType;
+import io.jeeyeon.app.ticketReserve.domain.concert.ConcertService;
 import io.jeeyeon.app.ticketReserve.domain.payment.Payment;
 import io.jeeyeon.app.ticketReserve.domain.payment.PaymentService;
 import io.jeeyeon.app.ticketReserve.domain.queueToken.QueueTokenService;
@@ -22,9 +23,10 @@ public class PaymentFacade {
     private final SeatService seatService;
     private final QueueTokenService queueTokenService;
     private final UserService userService;
+    private final ConcertService concertService;
 
     // 결제
-    public Payment processPayment(Long reservationId, Long userId) throws Exception {
+    public Payment processPayment(Long concertId, Long reservationId, Long userId) throws Exception {
         // 예약 정보 가져오기
         Reservation reservation = reservationService.findById(reservationId)
                 .orElseThrow(() -> new BaseException(ErrorType.ENTITY_NOT_FOUND));
@@ -43,7 +45,7 @@ public class PaymentFacade {
         reservationService.confirm(reservation);
 
         // 토큰 만료
-        queueTokenService.expireQueueToken(reservation.getTokenId());
+        queueTokenService.expireQueueToken(concertId, userId);
 
         // 결제 내역 저장
         return paymentService.save(reservationId, seat.getTicketPrice());

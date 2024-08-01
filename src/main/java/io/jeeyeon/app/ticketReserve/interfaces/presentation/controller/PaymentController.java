@@ -34,7 +34,7 @@ public class PaymentController {
             @RequestHeader("Auth") String token) throws Exception {
 
 
-        Payment payment = paymentFacade.processPayment(request.getReservationId(), request.getUserId());
+        Payment payment = paymentFacade.processPayment(concertId, request.getReservationId(), request.getUserId());
 
         PaymentResponse response = new PaymentResponse(payment.getPaymentId(), payment.getCreatedAt());
         return ResponseEntity.ok(ResponseDto.success(response));
