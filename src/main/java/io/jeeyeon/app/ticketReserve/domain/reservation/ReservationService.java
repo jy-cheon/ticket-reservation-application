@@ -28,26 +28,9 @@ public class ReservationService {
         Seat seat = seatRepository.findByConcertScheduleIdAndSeatNumber(scheduleId, seatNumber)
                 .orElseThrow(() -> new BaseException(ErrorType.SEAT_ENTITY_NOT_FOUND));
 
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         // 좌석 예약(좌석배정)
-        if (seat.isAvailable()) {
-            seat.setStatus(SeatStatus.RESERVED);
-            seatRepository.save(seat);
-        } else {
-            log.warn("해당 예약은 이미 예약되었습니다. {}", seatNumber);
-            throw new BaseException(ErrorType.NOT_AVAILABLE_SEAT);
-        }
-
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        seat.reserve();
+        seatRepository.save(seat);
 
         // 예약 저장
         return reservationRepository.save(new Reservation(seat.getSeatId(), tokenId));
