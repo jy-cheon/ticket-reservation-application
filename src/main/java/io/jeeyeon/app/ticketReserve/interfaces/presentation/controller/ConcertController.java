@@ -13,7 +13,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -46,7 +45,7 @@ public class ConcertController {
             @Parameter(in = ParameterIn.HEADER, description = "토큰 값 입력", required = true)
             @RequestHeader("Auth") Long token) {
 
-        List<LocalDateTime> dateTimes = concertScheduleManagerFacade.getAvailableDatesForReservation(concertId, token);
+        List<LocalDateTime> dateTimes = concertScheduleManagerFacade.getAvailableDatesForReservation(concertId);
         return ResponseEntity.ok(ResponseDto.success(dateTimes));
     }
 
@@ -65,7 +64,7 @@ public class ConcertController {
             @Parameter(description = "토큰 값 입력", required = true)
             @RequestHeader("Auth") Long token) {
 
-        List<Seat> list =  concertScheduleManagerFacade.getAvailableSeatsForReservation(concertId, date, token);
+        List<Seat> list =  concertScheduleManagerFacade.getAvailableSeatsForReservation(concertId, date);
         return ResponseEntity.ok(ResponseDto.success(list));
     }
 }

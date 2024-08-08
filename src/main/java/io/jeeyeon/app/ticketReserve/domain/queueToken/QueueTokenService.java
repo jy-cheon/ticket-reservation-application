@@ -154,10 +154,9 @@ public class QueueTokenService {
     }
 
 
-    public QueueToken validateActiveToken(Long concertId, Long tokenId) {
+    public QueueToken validateActiveToken(Long concertId, Long userId) {
         // 토큰 유효성 검증
-        QueueToken token = queueTokenRepository.findByTokenIdAndConcertId(concertId, tokenId)
-                .orElseThrow(() -> new BaseException(ErrorType.INVALID_TOKEN));
+        QueueToken token = this.getTokenInfo(concertId, userId);
 
         token.validateActiveToken();
         return token;
