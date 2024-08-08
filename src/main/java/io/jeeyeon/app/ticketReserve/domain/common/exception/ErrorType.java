@@ -14,7 +14,8 @@ public enum ErrorType {
     ENTITY_NOT_FOUND("해당 엔터티를 찾을 수 없습니다.", HttpStatus.NOT_FOUND),
     NOT_AVAILABLE_SEAT("해당 좌석은 예약 불가능합니다.", HttpStatus.CONFLICT),
     INSUFFICIENT_BALANCE("잔액이 충분하지 않습니다.", HttpStatus.FORBIDDEN),
-    SEAT_ENTITY_NOT_FOUND("좌석 엔터티를 찾을 수 없습니다.", HttpStatus.NOT_FOUND)
+    SEAT_ENTITY_NOT_FOUND("좌석 엔터티를 찾을 수 없습니다.", HttpStatus.NOT_FOUND),
+    USER_ENTITY_NOT_FOUND("유저 엔터티를 찾을 수 없습니다.", HttpStatus.NOT_FOUND)
     ;
 
     private final String message;

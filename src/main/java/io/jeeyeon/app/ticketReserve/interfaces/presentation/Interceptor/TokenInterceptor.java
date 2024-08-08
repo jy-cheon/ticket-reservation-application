@@ -8,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.HandlerMapping;
-
 import java.util.Map;
 
 import static io.jeeyeon.app.ticketReserve.domain.common.exception.ErrorType.INVALID_TOKEN;
@@ -22,17 +21,17 @@ public class TokenInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         // Auth header 추출
-        Long tokenId = Long.valueOf(request.getHeader("Auth"));
+        Long userId = Long.valueOf(request.getHeader("Auth"));
 
         // concertId 추출 from path variables
         Map<String, String> pathVariables = (Map<String, String>) request.getAttribute(HandlerMapping.URI_TEMPLATE_VARIABLES_ATTRIBUTE);
         Long concertId = Long.valueOf(pathVariables.get("concertId"));
 
-        if (tokenId == null) {
+        if (userId == null) {
             throw new BaseException(INVALID_TOKEN);
         }
 
-        tokenManagerFacade.validateActiveToken(concertId, tokenId);
+        tokenManagerFacade.validateActiveToken(concertId, userId);
 
         return true;
     }

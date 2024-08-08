@@ -40,4 +40,8 @@ public class ConcertEntity {
         concert.setUpdatedAt(this.updatedAt);
         return concert;
     }
+
+    public ConcertEntity(Concert concert) {
+        this.concertName = concert.getConcertName();
+    }
 }

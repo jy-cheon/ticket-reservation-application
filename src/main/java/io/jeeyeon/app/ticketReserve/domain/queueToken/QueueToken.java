@@ -29,6 +29,11 @@ public class QueueToken {
         this.expiredAt = LocalDateTime.now().plusHours(24); // waiting 토큰은 24시간 만료
     }
 
+    public QueueToken( Long concertId, Long userId) {
+        this.userId = userId;
+        this.concertId = concertId;
+    }
+
     public boolean isActive() {
         if (this.status == null) {
             throw new BaseException(ErrorType.ENTITY_NOT_FOUND);
@@ -71,4 +76,27 @@ public class QueueToken {
     }
 
 
+    public void setInfo(boolean isActive, boolean isWaiting, long aheadCount) {
+        if (isActive) {
+            this.status = TokenStatus.ACTIVE;
+        } else if (isWaiting) {
+            this.status = TokenStatus.WAITING;
+            this.aheadCount = aheadCount;
+        } else {
+            this.status = TokenStatus.EXPIRED;
+        }
+    }
+
+    public void setActive() {
+        this.status = TokenStatus.ACTIVE;
+    }
+
+    public void setWaiting(long aheadCount) {
+        this.status = TokenStatus.WAITING;
+        this.aheadCount = aheadCount;
+    }
+
+    public void setExpired() {
+        this.status = TokenStatus.EXPIRED;
+    }
 }

@@ -76,4 +76,9 @@ public class ConcertService {
         var list = concertRepository.findConcertsBeforeCurrentDate();
         return list;
     }
+
+    public void registerConcert(String concertName) {
+        Concert concert = new Concert(concertName);
+        concertRepository.registerConcert(concert);
+    }
 }

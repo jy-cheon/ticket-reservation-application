@@ -26,8 +26,8 @@ public class QueueTokenController {
     })
     @PostMapping("/concerts/{concertId}/token")
     public ResponseEntity<ResponseDto<?>> issueToken(@PathVariable Long concertId, @RequestParam Long userId) {
-        Long tokenId = tokenManagerFacade.issueToken(userId, concertId);
-        return ResponseEntity.ok(ResponseDto.success(new UserTokenResponse(tokenId)));
+        tokenManagerFacade.issueToken(userId, concertId);
+        return ResponseEntity.ok(ResponseDto.success("성공"));
     }
 
     @Operation(summary = "유저 토큰 조회 API", description = "유저 토큰을 조회한다.")
@@ -35,8 +35,8 @@ public class QueueTokenController {
             @ApiResponse(responseCode = "200", description = "요청 성공")
     })
     @GetMapping("/token")
-    public ResponseEntity<ResponseDto<?>> getTokenInfo(@RequestParam Long tokenId) {
-        QueueToken token = tokenManagerFacade.getTokenInfo(tokenId);
+    public ResponseEntity<ResponseDto<?>> getTokenInfo(@RequestParam Long concertId, @RequestParam Long userId) {
+        QueueToken token = tokenManagerFacade.getTokenInfo(concertId, userId);
         return ResponseEntity.ok(ResponseDto.success(new UserTokenResponse(token)));
     }
 

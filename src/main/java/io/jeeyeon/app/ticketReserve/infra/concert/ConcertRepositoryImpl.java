@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 @Repository
 public class ConcertRepositoryImpl implements ConcertRepository {
     private final ConcertJpaRepository concertJpaRepository;
+    private final ConcertRedisRepository concertRedisRepository;
 
     @Override
     public Optional<Concert> findByConcertId(Long concertId) {
@@ -32,9 +33,22 @@ public class ConcertRepositoryImpl implements ConcertRepository {
 
     @Override
     public List<Concert> findConcertsBeforeCurrentDate() {
-        List<ConcertEntity> concertEntities = concertJpaRepository.findConcertsBeforeCurrentDate();
-        return concertEntities.stream()
-                .map(ConcertEntity::toConcert)
-                .collect(Collectors.toList());
+        var cache = concertRedisRepository.findConcertsBeforeCurrentDate();
+        boolean hasCache = cache.map(list -> !list.isEmpty()).orElse(false);
+
+        if (hasCache) {
+            return cache.get();
+        } else {
+            List<ConcertEntity> concertEntities = concertJpaRepository.findConcertsBeforeCurrentDate();
+            return concertEntities.stream()
+                    .map(ConcertEntity::toConcert)
+                    .collect(Collectors.toList());
+        }
+
+    }
+
+    @Override
+    public void registerConcert(Concert concert) {
+        concertJpaRepository.save(new ConcertEntity(concert));
     }
 }
