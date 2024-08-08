@@ -12,6 +12,7 @@ import io.jeeyeon.app.ticketReserve.domain.seat.Seat;
 import io.jeeyeon.app.ticketReserve.domain.seat.SeatService;
 import io.jeeyeon.app.ticketReserve.domain.seat.SeatStatus;
 import io.jeeyeon.app.ticketReserve.domain.user.UserService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -26,6 +27,7 @@ public class PaymentFacade {
     private final ConcertService concertService;
 
     // 결제
+    @Transactional
     public Payment processPayment(Long concertId, Long reservationId, Long userId) throws Exception {
         // 예약 정보 가져오기
         Reservation reservation = reservationService.findById(reservationId)
