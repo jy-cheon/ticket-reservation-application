@@ -1,0 +1,1194 @@
+2024-07-22 00:00:00 [scheduling-1] INFO  p6spy - #1721574000016 | took 0ms | rollback | connection 5347| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:01:00 [scheduling-1] INFO  p6spy - #1721574060009 | took 0ms | rollback | connection 5348| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:02:00 [scheduling-1] INFO  p6spy - #1721574120010 | took 0ms | rollback | connection 5353| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:03:00 [scheduling-1] INFO  p6spy - #1721574180013 | took 0ms | rollback | connection 5356| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:04:00 [scheduling-1] INFO  p6spy - #1721574240013 | took 0ms | rollback | connection 5358| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:05:00 [scheduling-1] INFO  p6spy - #1721574300007 | took 0ms | rollback | connection 5362| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:06:00 [scheduling-1] INFO  p6spy - #1721574360013 | took 0ms | rollback | connection 5364| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:07:00 [scheduling-1] INFO  p6spy - #1721574420007 | took 0ms | rollback | connection 5367| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:08:00 [scheduling-1] INFO  p6spy - #1721574480005 | took 0ms | rollback | connection 5370| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:09:00 [scheduling-1] INFO  p6spy - #1721574540006 | took 0ms | rollback | connection 5373| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:10:00 [scheduling-1] INFO  p6spy - #1721574600006 | took 0ms | rollback | connection 5377| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:11:00 [scheduling-1] INFO  p6spy - #1721574660003 | took 0ms | rollback | connection 5378| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:12:00 [scheduling-1] INFO  p6spy - #1721574720008 | took 0ms | rollback | connection 5383| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:13:00 [scheduling-1] INFO  p6spy - #1721574780005 | took 0ms | rollback | connection 5385| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:14:00 [scheduling-1] INFO  p6spy - #1721574840009 | took 0ms | rollback | connection 5387| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:15:00 [scheduling-1] INFO  p6spy - #1721574900012 | took 0ms | rollback | connection 5392| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:16:00 [scheduling-1] INFO  p6spy - #1721574960011 | took 0ms | rollback | connection 5394| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:17:00 [scheduling-1] INFO  p6spy - #1721575020004 | took 0ms | rollback | connection 5397| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:18:00 [scheduling-1] INFO  p6spy - #1721575080005 | took 0ms | rollback | connection 5400| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:19:00 [scheduling-1] INFO  p6spy - #1721575140004 | took 0ms | rollback | connection 5404| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:20:00 [scheduling-1] INFO  p6spy - #1721575200005 | took 0ms | rollback | connection 5407| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:21:00 [scheduling-1] INFO  p6spy - #1721575260004 | took 0ms | rollback | connection 5410| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:22:00 [scheduling-1] INFO  p6spy - #1721575320002 | took 0ms | rollback | connection 5412| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:23:00 [scheduling-1] INFO  p6spy - #1721575380008 | took 0ms | rollback | connection 5414| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:24:00 [scheduling-1] INFO  p6spy - #1721575440005 | took 0ms | rollback | connection 5418| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:25:00 [scheduling-1] INFO  p6spy - #1721575500004 | took 0ms | rollback | connection 5420| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:26:00 [scheduling-1] INFO  p6spy - #1721575560007 | took 0ms | rollback | connection 5425| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:27:00 [scheduling-1] INFO  p6spy - #1721575620009 | took 0ms | rollback | connection 5427| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:28:00 [scheduling-1] INFO  p6spy - #1721575680004 | took 0ms | rollback | connection 5430| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:29:00 [scheduling-1] INFO  p6spy - #1721575740005 | took 0ms | rollback | connection 5433| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:30:00 [scheduling-1] INFO  p6spy - #1721575800007 | took 0ms | rollback | connection 5437| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:31:00 [scheduling-1] INFO  p6spy - #1721575860004 | took 0ms | rollback | connection 5439| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:32:00 [scheduling-1] INFO  p6spy - #1721575920005 | took 0ms | rollback | connection 5442| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:33:00 [scheduling-1] INFO  p6spy - #1721575980003 | took 0ms | rollback | connection 5444| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:34:00 [scheduling-1] INFO  p6spy - #1721576040002 | took 0ms | rollback | connection 5447| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:35:00 [scheduling-1] INFO  p6spy - #1721576100002 | took 0ms | rollback | connection 5450| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:36:00 [scheduling-1] INFO  p6spy - #1721576160002 | took 0ms | rollback | connection 5453| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:37:00 [scheduling-1] INFO  p6spy - #1721576220005 | took 0ms | rollback | connection 5456| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:38:00 [scheduling-1] INFO  p6spy - #1721576280006 | took 0ms | rollback | connection 5461| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:39:00 [scheduling-1] INFO  p6spy - #1721576340006 | took 0ms | rollback | connection 5464| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:40:00 [scheduling-1] INFO  p6spy - #1721576400005 | took 0ms | rollback | connection 5466| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:41:00 [scheduling-1] INFO  p6spy - #1721576460010 | took 0ms | rollback | connection 5470| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:42:00 [scheduling-1] INFO  p6spy - #1721576520014 | took 0ms | rollback | connection 5473| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:43:00 [scheduling-1] INFO  p6spy - #1721576580006 | took 0ms | rollback | connection 5475| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:44:00 [scheduling-1] INFO  p6spy - #1721576640006 | took 0ms | rollback | connection 5478| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:45:00 [scheduling-1] INFO  p6spy - #1721576700013 | took 0ms | rollback | connection 5481| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:46:00 [scheduling-1] INFO  p6spy - #1721576760010 | took 0ms | rollback | connection 5484| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:47:00 [scheduling-1] INFO  p6spy - #1721576820003 | took 0ms | rollback | connection 5486| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:48:00 [scheduling-1] INFO  p6spy - #1721576880006 | took 0ms | rollback | connection 5491| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:49:00 [scheduling-1] INFO  p6spy - #1721576940004 | took 0ms | rollback | connection 5492| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:50:00 [scheduling-1] INFO  p6spy - #1721577000007 | took 0ms | rollback | connection 5497| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:51:00 [scheduling-1] INFO  p6spy - #1721577060005 | took 0ms | rollback | connection 5498| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:52:00 [scheduling-1] INFO  p6spy - #1721577120007 | took 0ms | rollback | connection 5503| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:53:00 [scheduling-1] INFO  p6spy - #1721577180005 | took 0ms | rollback | connection 5504| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:54:00 [scheduling-1] INFO  p6spy - #1721577240007 | took 0ms | rollback | connection 5508| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:55:00 [scheduling-1] INFO  p6spy - #1721577300011 | took 0ms | rollback | connection 5512| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:56:00 [scheduling-1] INFO  p6spy - #1721577360005 | took 0ms | rollback | connection 5515| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:57:00 [scheduling-1] INFO  p6spy - #1721577420004 | took 0ms | rollback | connection 5517| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:58:00 [scheduling-1] INFO  p6spy - #1721577480008 | took 0ms | rollback | connection 5521| url jdbc:h2:mem:test
+
+;
+2024-07-22 00:59:00 [scheduling-1] INFO  p6spy - #1721577540007 | took 0ms | rollback | connection 5524| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:00:00 [scheduling-1] INFO  p6spy - #1721577600006 | took 0ms | rollback | connection 5525| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:01:00 [scheduling-1] INFO  p6spy - #1721577660006 | took 0ms | rollback | connection 5529| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:02:00 [scheduling-1] INFO  p6spy - #1721577720004 | took 0ms | rollback | connection 5531| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:03:00 [scheduling-1] INFO  p6spy - #1721577780005 | took 0ms | rollback | connection 5536| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:04:00 [scheduling-1] INFO  p6spy - #1721577840009 | took 0ms | rollback | connection 5537| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:05:00 [scheduling-1] INFO  p6spy - #1721577900006 | took 0ms | rollback | connection 5540| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:06:00 [scheduling-1] INFO  p6spy - #1721577960001 | took 0ms | rollback | connection 5543| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:07:00 [scheduling-1] INFO  p6spy - #1721578020006 | took 0ms | rollback | connection 5548| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:08:00 [scheduling-1] INFO  p6spy - #1721578080011 | took 0ms | rollback | connection 5551| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:09:00 [scheduling-1] INFO  p6spy - #1721578140004 | took 0ms | rollback | connection 5554| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:10:00 [scheduling-1] INFO  p6spy - #1721578200003 | took 0ms | rollback | connection 5555| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:11:00 [scheduling-1] INFO  p6spy - #1721578260007 | took 0ms | rollback | connection 5560| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:12:00 [scheduling-1] INFO  p6spy - #1721578320005 | took 0ms | rollback | connection 5563| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:13:00 [scheduling-1] INFO  p6spy - #1721578380002 | took 0ms | rollback | connection 5565| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:14:00 [scheduling-1] INFO  p6spy - #1721578440005 | took 0ms | rollback | connection 5567| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:15:00 [scheduling-1] INFO  p6spy - #1721578500005 | took 0ms | rollback | connection 5570| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:16:00 [scheduling-1] INFO  p6spy - #1721578560003 | took 0ms | rollback | connection 5573| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:17:00 [scheduling-1] INFO  p6spy - #1721578620010 | took 0ms | rollback | connection 5578| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:18:00 [scheduling-1] INFO  p6spy - #1721578680004 | took 0ms | rollback | connection 5581| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:19:00 [scheduling-1] INFO  p6spy - #1721578740004 | took 0ms | rollback | connection 5584| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:20:00 [scheduling-1] INFO  p6spy - #1721578800002 | took 0ms | rollback | connection 5585| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:21:00 [scheduling-1] INFO  p6spy - #1721578860005 | took 0ms | rollback | connection 5589| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:21:58 [scheduling-1] INFO  p6spy - #1721578918002 | took 0ms | rollback | connection 5592| url jdbc:h2:mem:test
+
+;
+2024-07-22 01:53:03 [scheduling-1] INFO  p6spy - #1721580783533 | took 0ms | rollback | connection 5595| url jdbc:h2:mem:test
+
+;
+2024-07-22 02:23:52 [scheduling-1] INFO  p6spy - #1721582632443 | took 0ms | rollback | connection 5597| url jdbc:h2:mem:test
+
+;
+2024-07-22 02:24:00 [scheduling-1] INFO  p6spy - #1721582640013 | took 0ms | rollback | connection 5602| url jdbc:h2:mem:test
+
+;
+2024-07-22 02:35:32 [scheduling-1] INFO  p6spy - #1721583332186 | took 0ms | rollback | connection 5604| url jdbc:h2:mem:test
+
+;
+2024-07-22 03:35:59 [scheduling-1] INFO  p6spy - #1721586959663 | took 0ms | rollback | connection 5607| url jdbc:h2:mem:test
+
+;
+2024-07-22 03:36:00 [scheduling-1] INFO  p6spy - #1721586960013 | took 0ms | rollback | connection 5610| url jdbc:h2:mem:test
+
+;
+2024-07-22 04:36:55 [scheduling-1] INFO  p6spy - #1721590615819 | took 0ms | rollback | connection 5612| url jdbc:h2:mem:test
+
+;
+2024-07-22 04:37:00 [scheduling-1] INFO  p6spy - #1721590620011 | took 0ms | rollback | connection 5616| url jdbc:h2:mem:test
+
+;
+2024-07-22 05:37:54 [scheduling-1] INFO  p6spy - #1721594274655 | took 0ms | rollback | connection 5620| url jdbc:h2:mem:test
+
+;
+2024-07-22 05:38:00 [scheduling-1] INFO  p6spy - #1721594280003 | took 0ms | rollback | connection 5621| url jdbc:h2:mem:test
+
+;
+2024-07-22 07:38:54 [scheduling-1] INFO  p6spy - #1721601534529 | took 0ms | rollback | connection 5625| url jdbc:h2:mem:test
+
+;
+2024-07-22 07:39:00 [scheduling-1] INFO  p6spy - #1721601540004 | took 0ms | rollback | connection 5629| url jdbc:h2:mem:test
+
+;
+2024-07-22 08:39:56 [scheduling-1] INFO  p6spy - #1721605196692 | took 0ms | rollback | connection 5632| url jdbc:h2:mem:test
+
+;
+2024-07-22 08:40:00 [scheduling-1] INFO  p6spy - #1721605200001 | took 0ms | rollback | connection 5633| url jdbc:h2:mem:test
+
+;
+2024-07-22 09:22:25 [scheduling-1] INFO  p6spy - #1721607745762 | took 0ms | rollback | connection 5636| url jdbc:h2:mem:test
+
+;
+2024-07-22 09:23:00 [scheduling-1] INFO  p6spy - #1721607780005 | took 0ms | rollback | connection 5641| url jdbc:h2:mem:test
+
+;
+2024-07-22 09:24:27 [scheduling-1] INFO  p6spy - #1721607867372 | took 0ms | rollback | connection 5644| url jdbc:h2:mem:test
+
+;
+2024-07-22 09:36:32 [scheduling-1] INFO  p6spy - #1721608592846 | took 0ms | rollback | connection 5647| url jdbc:h2:mem:test
+
+;
+2024-07-22 09:37:00 [scheduling-1] INFO  p6spy - #1721608620014 | took 0ms | rollback | connection 5650| url jdbc:h2:mem:test
+
+;
+2024-07-22 09:53:29 [scheduling-1] INFO  p6spy - #1721609609636 | took 0ms | rollback | connection 5651| url jdbc:h2:mem:test
+
+;
+2024-07-22 09:54:00 [scheduling-1] INFO  p6spy - #1721609640008 | took 0ms | rollback | connection 5655| url jdbc:h2:mem:test
+
+;
+2024-07-22 10:12:29 [scheduling-1] INFO  p6spy - #1721610749673 | took 0ms | rollback | connection 5657| url jdbc:h2:mem:test
+
+;
+2024-07-22 10:13:00 [scheduling-1] INFO  p6spy - #1721610780012 | took 0ms | rollback | connection 5662| url jdbc:h2:mem:test
+
+;
+2024-07-22 10:14:00 [scheduling-1] INFO  p6spy - #1721610840014 | took 0ms | rollback | connection 5664| url jdbc:h2:mem:test
+
+;
+2024-07-22 10:15:00 [scheduling-1] INFO  p6spy - #1721610900016 | took 0ms | rollback | connection 5668| url jdbc:h2:mem:test
+
+;
+2024-07-22 10:16:00 [scheduling-1] INFO  p6spy - #1721610960014 | took 0ms | rollback | connection 5670| url jdbc:h2:mem:test
+
+;
+2024-07-22 10:17:00 [scheduling-1] INFO  p6spy - #1721611020005 | took 0ms | rollback | connection 5673| url jdbc:h2:mem:test
+
+;
+2024-07-22 10:18:00 [scheduling-1] INFO  p6spy - #1721611080012 | took 0ms | rollback | connection 5677| url jdbc:h2:mem:test
+
+;
+2024-07-22 10:19:00 [scheduling-1] INFO  p6spy - #1721611140010 | took 0ms | rollback | connection 5679| url jdbc:h2:mem:test
+
+;
+2024-07-22 10:49:32 [scheduling-1] INFO  p6spy - #1721612972968 | took 0ms | rollback | connection 5681| url jdbc:h2:mem:test
+
+;
+2024-07-22 10:50:00 [scheduling-1] INFO  p6spy - #1721613000008 | took 0ms | rollback | connection 5686| url jdbc:h2:mem:test
+
+;
+2024-07-22 11:20:12 [scheduling-1] INFO  p6spy - #1721614812156 | took 0ms | rollback | connection 5689| url jdbc:h2:mem:test
+
+;
+2024-07-22 11:22:54 [scheduling-1] INFO  p6spy - #1721614974545 | took 0ms | rollback | connection 5692| url jdbc:h2:mem:test
+
+;
+2024-07-22 11:23:00 [scheduling-1] INFO  p6spy - #1721614980005 | took 0ms | rollback | connection 5693| url jdbc:h2:mem:test
+
+;
+2024-07-22 11:45:55 [scheduling-1] INFO  p6spy - #1721616355659 | took 0ms | rollback | connection 5697| url jdbc:h2:mem:test
+
+;
+2024-07-22 11:46:00 [scheduling-1] INFO  p6spy - #1721616360003 | took 0ms | rollback | connection 5699| url jdbc:h2:mem:test
+
+;
+2024-07-22 11:47:00 [scheduling-1] INFO  p6spy - #1721616420004 | took 0ms | rollback | connection 5702| url jdbc:h2:mem:test
+
+;
+2024-07-22 11:48:00 [scheduling-1] INFO  p6spy - #1721616480006 | took 0ms | rollback | connection 5705| url jdbc:h2:mem:test
+
+;
+2024-07-22 11:49:00 [scheduling-1] INFO  p6spy - #1721616540012 | took 0ms | rollback | connection 5710| url jdbc:h2:mem:test
+
+;
+2024-07-22 11:50:00 [scheduling-1] INFO  p6spy - #1721616600014 | took 0ms | rollback | connection 5713| url jdbc:h2:mem:test
+
+;
+2024-07-22 11:51:00 [scheduling-1] INFO  p6spy - #1721616660017 | took 0ms | rollback | connection 5716| url jdbc:h2:mem:test
+
+;
+2024-07-22 12:51:58 [scheduling-1] INFO  p6spy - #1721620318287 | took 0ms | rollback | connection 5719| url jdbc:h2:mem:test
+
+;
+2024-07-22 12:52:00 [scheduling-1] INFO  p6spy - #1721620320003 | took 0ms | rollback | connection 5720| url jdbc:h2:mem:test
+
+;
+2024-07-22 12:53:00 [scheduling-1] INFO  p6spy - #1721620380011 | took 0ms | rollback | connection 5725| url jdbc:h2:mem:test
+
+;
+2024-07-22 12:54:00 [scheduling-1] INFO  p6spy - #1721620440007 | took 0ms | rollback | connection 5726| url jdbc:h2:mem:test
+
+;
+2024-07-22 12:55:00 [scheduling-1] INFO  p6spy - #1721620500012 | took 0ms | rollback | connection 5730| url jdbc:h2:mem:test
+
+;
+2024-07-22 12:56:00 [scheduling-1] INFO  p6spy - #1721620560011 | took 0ms | rollback | connection 5732| url jdbc:h2:mem:test
+
+;
+2024-07-22 12:57:00 [scheduling-1] INFO  p6spy - #1721620620022 | took 0ms | rollback | connection 5737| url jdbc:h2:mem:test
+
+;
+2024-07-22 12:58:00 [scheduling-1] INFO  p6spy - #1721620680019 | took 0ms | rollback | connection 5740| url jdbc:h2:mem:test
+
+;
+2024-07-22 13:58:30 [scheduling-1] INFO  p6spy - #1721624310834 | took 0ms | rollback | connection 5741| url jdbc:h2:mem:test
+
+;
+2024-07-22 13:59:00 [scheduling-1] INFO  p6spy - #1721624340019 | took 0ms | rollback | connection 5745| url jdbc:h2:mem:test
+
+;
+2024-07-22 14:00:00 [scheduling-1] INFO  p6spy - #1721624400020 | took 0ms | rollback | connection 5749| url jdbc:h2:mem:test
+
+;
+2024-07-22 14:01:00 [scheduling-1] INFO  p6spy - #1721624460011 | took 0ms | rollback | connection 5752| url jdbc:h2:mem:test
+
+;
+2024-07-22 14:02:00 [scheduling-1] INFO  p6spy - #1721624520014 | took 0ms | rollback | connection 5754| url jdbc:h2:mem:test
+
+;
+2024-07-22 14:03:00 [scheduling-1] INFO  p6spy - #1721624580011 | took 0ms | rollback | connection 5758| url jdbc:h2:mem:test
+
+;
+2024-07-22 14:04:00 [scheduling-1] INFO  p6spy - #1721624640013 | took 0ms | rollback | connection 5761| url jdbc:h2:mem:test
+
+;
+2024-07-22 14:47:30 [scheduling-1] INFO  p6spy - #1721627250250 | took 0ms | rollback | connection 5762| url jdbc:h2:mem:test
+
+;
+2024-07-22 14:48:00 [scheduling-1] INFO  p6spy - #1721627280014 | took 0ms | rollback | connection 5767| url jdbc:h2:mem:test
+
+;
+2024-07-22 14:49:00 [scheduling-1] INFO  p6spy - #1721627340018 | took 0ms | rollback | connection 5768| url jdbc:h2:mem:test
+
+;
+2024-07-22 14:50:00 [scheduling-1] INFO  p6spy - #1721627400003 | took 0ms | rollback | connection 5771| url jdbc:h2:mem:test
+
+;
+2024-07-22 14:51:00 [scheduling-1] INFO  p6spy - #1721627460011 | took 0ms | rollback | connection 5776| url jdbc:h2:mem:test
+
+;
+2024-07-22 14:52:00 [scheduling-1] INFO  p6spy - #1721627520010 | took 0ms | rollback | connection 5779| url jdbc:h2:mem:test
+
+;
+2024-07-22 14:53:00 [scheduling-1] INFO  p6spy - #1721627580013 | took 0ms | rollback | connection 5781| url jdbc:h2:mem:test
+
+;
+2024-07-22 15:53:58 [scheduling-1] INFO  p6spy - #1721631238158 | took 0ms | rollback | connection 5785| url jdbc:h2:mem:test
+
+;
+2024-07-22 15:54:00 [scheduling-1] INFO  p6spy - #1721631240013 | took 0ms | rollback | connection 5788| url jdbc:h2:mem:test
+
+;
+2024-07-22 15:55:00 [scheduling-1] INFO  p6spy - #1721631300011 | took 0ms | rollback | connection 5789| url jdbc:h2:mem:test
+
+;
+2024-07-22 15:56:00 [scheduling-1] INFO  p6spy - #1721631360015 | took 0ms | rollback | connection 5794| url jdbc:h2:mem:test
+
+;
+2024-07-22 15:57:00 [scheduling-1] INFO  p6spy - #1721631420010 | took 0ms | rollback | connection 5795| url jdbc:h2:mem:test
+
+;
+2024-07-22 15:58:00 [scheduling-1] INFO  p6spy - #1721631480010 | took 0ms | rollback | connection 5799| url jdbc:h2:mem:test
+
+;
+2024-07-22 15:59:00 [scheduling-1] INFO  p6spy - #1721631540005 | took 0ms | rollback | connection 5802| url jdbc:h2:mem:test
+
+;
+2024-07-22 16:00:00 [scheduling-1] INFO  p6spy - #1721631600007 | took 0ms | rollback | connection 5805| url jdbc:h2:mem:test
+
+;
+2024-07-22 16:45:03 [scheduling-1] INFO  p6spy - #1721634303564 | took 0ms | rollback | connection 5807| url jdbc:h2:mem:test
+
+;
+2024-07-22 16:46:00 [scheduling-1] INFO  p6spy - #1721634360005 | took 0ms | rollback | connection 5810| url jdbc:h2:mem:test
+
+;
+2024-07-22 16:47:00 [scheduling-1] INFO  p6spy - #1721634420009 | took 0ms | rollback | connection 5815| url jdbc:h2:mem:test
+
+;
+2024-07-22 16:48:00 [scheduling-1] INFO  p6spy - #1721634480007 | took 0ms | rollback | connection 5817| url jdbc:h2:mem:test
+
+;
+2024-07-22 16:49:00 [scheduling-1] INFO  p6spy - #1721634540009 | took 0ms | rollback | connection 5821| url jdbc:h2:mem:test
+
+;
+2024-07-22 16:50:00 [scheduling-1] INFO  p6spy - #1721634600008 | took 0ms | rollback | connection 5824| url jdbc:h2:mem:test
+
+;
+2024-07-22 16:51:00 [scheduling-1] INFO  p6spy - #1721634660008 | took 0ms | rollback | connection 5826| url jdbc:h2:mem:test
+
+;
+2024-07-22 17:51:30 [scheduling-1] INFO  p6spy - #1721638290887 | took 0ms | rollback | connection 5829| url jdbc:h2:mem:test
+
+;
+2024-07-22 17:52:00 [scheduling-1] INFO  p6spy - #1721638320005 | took 0ms | rollback | connection 5831| url jdbc:h2:mem:test
+
+;
+2024-07-22 17:53:00 [scheduling-1] INFO  p6spy - #1721638380006 | took 0ms | rollback | connection 5835| url jdbc:h2:mem:test
+
+;
+2024-07-22 17:54:00 [scheduling-1] INFO  p6spy - #1721638440008 | took 0ms | rollback | connection 5839| url jdbc:h2:mem:test
+
+;
+2024-07-22 17:55:00 [scheduling-1] INFO  p6spy - #1721638500007 | took 0ms | rollback | connection 5840| url jdbc:h2:mem:test
+
+;
+2024-07-22 17:56:00 [scheduling-1] INFO  p6spy - #1721638560010 | took 0ms | rollback | connection 5843| url jdbc:h2:mem:test
+
+;
+2024-07-22 17:57:00 [scheduling-1] INFO  p6spy - #1721638620008 | took 0ms | rollback | connection 5846| url jdbc:h2:mem:test
+
+;
+2024-07-22 18:57:57 [scheduling-1] INFO  p6spy - #1721642277785 | took 0ms | rollback | connection 5850| url jdbc:h2:mem:test
+
+;
+2024-07-22 18:58:00 [scheduling-1] INFO  p6spy - #1721642280004 | took 0ms | rollback | connection 5852| url jdbc:h2:mem:test
+
+;
+2024-07-22 18:59:00 [scheduling-1] INFO  p6spy - #1721642340011 | took 0ms | rollback | connection 5857| url jdbc:h2:mem:test
+
+;
+2024-07-22 19:00:00 [scheduling-1] INFO  p6spy - #1721642400013 | took 0ms | rollback | connection 5860| url jdbc:h2:mem:test
+
+;
+2024-07-22 19:01:00 [scheduling-1] INFO  p6spy - #1721642460014 | took 0ms | rollback | connection 5863| url jdbc:h2:mem:test
+
+;
+2024-07-22 19:02:00 [scheduling-1] INFO  p6spy - #1721642520012 | took 0ms | rollback | connection 5864| url jdbc:h2:mem:test
+
+;
+2024-07-22 19:03:00 [scheduling-1] INFO  p6spy - #1721642580013 | took 0ms | rollback | connection 5869| url jdbc:h2:mem:test
+
+;
+2024-07-22 19:04:00 [scheduling-1] INFO  p6spy - #1721642640004 | took 0ms | rollback | connection 5870| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:04:30 [scheduling-1] INFO  p6spy - #1721646270753 | took 0ms | rollback | connection 5873| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:05:00 [scheduling-1] INFO  p6spy - #1721646300009 | took 0ms | rollback | connection 5878| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:06:00 [scheduling-1] INFO  p6spy - #1721646360010 | took 0ms | rollback | connection 5881| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:07:00 [scheduling-1] INFO  p6spy - #1721646420009 | took 0ms | rollback | connection 5882| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:08:00 [scheduling-1] INFO  p6spy - #1721646480447 | took 0ms | rollback | connection 5887| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:08:59 [scheduling-1] INFO  p6spy - #1721646539309 | took 0ms | rollback | connection 5890| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:10:00 [scheduling-1] INFO  p6spy - #1721646600004 | took 0ms | rollback | connection 5891| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:11:00 [scheduling-1] INFO  p6spy - #1721646660008 | took 0ms | rollback | connection 5894| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:12:00 [scheduling-1] INFO  p6spy - #1721646720010 | took 0ms | rollback | connection 5899| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:13:00 [scheduling-1] INFO  p6spy - #1721646780008 | took 0ms | rollback | connection 5902| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:14:00 [scheduling-1] INFO  p6spy - #1721646840005 | took 0ms | rollback | connection 5904| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:15:00 [scheduling-1] INFO  p6spy - #1721646900007 | took 0ms | rollback | connection 5907| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:16:00 [scheduling-1] INFO  p6spy - #1721646960014 | took 0ms | rollback | connection 5911| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:17:00 [scheduling-1] INFO  p6spy - #1721647020005 | took 0ms | rollback | connection 5913| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:18:00 [scheduling-1] INFO  p6spy - #1721647080011 | took 0ms | rollback | connection 5915| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:19:00 [scheduling-1] INFO  p6spy - #1721647140013 | took 0ms | rollback | connection 5920| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:20:00 [scheduling-1] INFO  p6spy - #1721647200006 | took 0ms | rollback | connection 5923| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:21:00 [scheduling-1] INFO  p6spy - #1721647260016 | took 0ms | rollback | connection 5926| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:22:00 [scheduling-1] INFO  p6spy - #1721647320005 | took 0ms | rollback | connection 5927| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:23:00 [scheduling-1] INFO  p6spy - #1721647380003 | took 0ms | rollback | connection 5932| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:24:00 [scheduling-1] INFO  p6spy - #1721647440005 | took 0ms | rollback | connection 5934| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:25:00 [scheduling-1] INFO  p6spy - #1721647500005 | took 0ms | rollback | connection 5938| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:26:00 [scheduling-1] INFO  p6spy - #1721647560010 | took 0ms | rollback | connection 5939| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:27:00 [scheduling-1] INFO  p6spy - #1721647620005 | took 0ms | rollback | connection 5942| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:28:00 [scheduling-1] INFO  p6spy - #1721647680007 | took 0ms | rollback | connection 5946| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:29:00 [scheduling-1] INFO  p6spy - #1721647740007 | took 0ms | rollback | connection 5948| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:30:00 [scheduling-1] INFO  p6spy - #1721647800006 | took 0ms | rollback | connection 5952| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:31:00 [scheduling-1] INFO  p6spy - #1721647860008 | took 0ms | rollback | connection 5956| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:32:00 [scheduling-1] INFO  p6spy - #1721647920012 | took 0ms | rollback | connection 5957| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:33:00 [scheduling-1] INFO  p6spy - #1721647980007 | took 0ms | rollback | connection 5962| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:34:00 [scheduling-1] INFO  p6spy - #1721648040014 | took 0ms | rollback | connection 5965| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:35:00 [scheduling-1] INFO  p6spy - #1721648100008 | took 0ms | rollback | connection 5968| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:36:00 [scheduling-1] INFO  p6spy - #1721648160009 | took 0ms | rollback | connection 5969| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:37:00 [scheduling-1] INFO  p6spy - #1721648220012 | took 0ms | rollback | connection 5973| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:38:00 [scheduling-1] INFO  p6spy - #1721648280006 | took 0ms | rollback | connection 5977| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:39:00 [scheduling-1] INFO  p6spy - #1721648340006 | took 0ms | rollback | connection 5978| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:40:00 [scheduling-1] INFO  p6spy - #1721648400003 | took 0ms | rollback | connection 5981| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:40:59 [scheduling-1] INFO  p6spy - #1721648459981 | took 0ms | rollback | connection 5986| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:42:00 [scheduling-1] INFO  p6spy - #1721648520003 | took 0ms | rollback | connection 5988| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:43:00 [scheduling-1] INFO  p6spy - #1721648580005 | took 0ms | rollback | connection 5992| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:44:00 [scheduling-1] INFO  p6spy - #1721648640001 | took 0ms | rollback | connection 5993| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:45:00 [scheduling-1] INFO  p6spy - #1721648700005 | took 0ms | rollback | connection 5998| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:46:00 [scheduling-1] INFO  p6spy - #1721648760001 | took 0ms | rollback | connection 5999| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:47:00 [scheduling-1] INFO  p6spy - #1721648820012 | took 0ms | rollback | connection 6004| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:48:00 [scheduling-1] INFO  p6spy - #1721648880002 | took 0ms | rollback | connection 6005| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:49:00 [scheduling-1] INFO  p6spy - #1721648940007 | took 0ms | rollback | connection 6010| url jdbc:h2:mem:test
+
+;
+2024-07-22 20:50:27 [scheduling-1] INFO  p6spy - #1721649027722 | took 0ms | rollback | connection 6012| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:05:38 [scheduling-1] INFO  p6spy - #1721649938384 | took 0ms | rollback | connection 6016| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:06:02 [scheduling-1] INFO  p6spy - #1721649962431 | took 0ms | rollback | connection 6017| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:07:00 [scheduling-1] INFO  p6spy - #1721650020005 | took 0ms | rollback | connection 6022| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:08:00 [scheduling-1] INFO  p6spy - #1721650080010 | took 0ms | rollback | connection 6025| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:09:00 [scheduling-1] INFO  p6spy - #1721650140011 | took 0ms | rollback | connection 6026| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:10:00 [scheduling-1] INFO  p6spy - #1721650200016 | took 0ms | rollback | connection 6031| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:11:00 [scheduling-1] INFO  p6spy - #1721650260011 | took 0ms | rollback | connection 6032| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:12:00 [scheduling-1] INFO  p6spy - #1721650320004 | took 0ms | rollback | connection 6035| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:13:00 [scheduling-1] INFO  p6spy - #1721650380021 | took 0ms | rollback | connection 6040| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:14:00 [scheduling-1] INFO  p6spy - #1721650440006 | took 0ms | rollback | connection 6041| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:15:00 [scheduling-1] INFO  p6spy - #1721650500010 | took 0ms | rollback | connection 6045| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:16:00 [scheduling-1] INFO  p6spy - #1721650560003 | took 0ms | rollback | connection 6048| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:17:00 [scheduling-1] INFO  p6spy - #1721650620012 | took 0ms | rollback | connection 6050| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:18:00 [scheduling-1] INFO  p6spy - #1721650680040 | took 0ms | rollback | connection 6055| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:19:00 [scheduling-1] INFO  p6spy - #1721650740009 | took 0ms | rollback | connection 6058| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:20:00 [scheduling-1] INFO  p6spy - #1721650800005 | took 0ms | rollback | connection 6059| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:21:00 [scheduling-1] INFO  p6spy - #1721650860007 | took 0ms | rollback | connection 6063| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:22:00 [scheduling-1] INFO  p6spy - #1721650920004 | took 0ms | rollback | connection 6066| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:23:00 [scheduling-1] INFO  p6spy - #1721650980007 | took 0ms | rollback | connection 6070| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:24:00 [scheduling-1] INFO  p6spy - #1721651040005 | took 0ms | rollback | connection 6072| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:25:00 [scheduling-1] INFO  p6spy - #1721651100005 | took 0ms | rollback | connection 6075| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:26:00 [scheduling-1] INFO  p6spy - #1721651160019 | took 0ms | rollback | connection 6078| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:27:00 [scheduling-1] INFO  p6spy - #1721651220005 | took 0ms | rollback | connection 6080| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:28:00 [scheduling-1] INFO  p6spy - #1721651280010 | took 0ms | rollback | connection 6085| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:29:00 [scheduling-1] INFO  p6spy - #1721651340006 | took 0ms | rollback | connection 6087| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:30:00 [scheduling-1] INFO  p6spy - #1721651400006 | took 0ms | rollback | connection 6091| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:31:00 [scheduling-1] INFO  p6spy - #1721651460003 | took 0ms | rollback | connection 6092| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:32:00 [scheduling-1] INFO  p6spy - #1721651520007 | took 0ms | rollback | connection 6097| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:33:00 [scheduling-1] INFO  p6spy - #1721651580006 | took 0ms | rollback | connection 6099| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:34:00 [scheduling-1] INFO  p6spy - #1721651640007 | took 0ms | rollback | connection 6102| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:35:00 [scheduling-1] INFO  p6spy - #1721651700009 | took 0ms | rollback | connection 6105| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:36:00 [scheduling-1] INFO  p6spy - #1721651760009 | took 0ms | rollback | connection 6107| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:37:00 [scheduling-1] INFO  p6spy - #1721651820006 | took 0ms | rollback | connection 6112| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:38:00 [scheduling-1] INFO  p6spy - #1721651880007 | took 0ms | rollback | connection 6114| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:39:00 [scheduling-1] INFO  p6spy - #1721651940004 | took 0ms | rollback | connection 6117| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:40:00 [scheduling-1] INFO  p6spy - #1721652000007 | took 0ms | rollback | connection 6121| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:41:00 [scheduling-1] INFO  p6spy - #1721652060009 | took 0ms | rollback | connection 6123| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:42:00 [scheduling-1] INFO  p6spy - #1721652120005 | took 0ms | rollback | connection 6125| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:43:00 [scheduling-1] INFO  p6spy - #1721652180008 | took 0ms | rollback | connection 6130| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:44:00 [scheduling-1] INFO  p6spy - #1721652240008 | took 0ms | rollback | connection 6133| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:45:00 [scheduling-1] INFO  p6spy - #1721652300006 | took 0ms | rollback | connection 6136| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:46:00 [scheduling-1] INFO  p6spy - #1721652360014 | took 0ms | rollback | connection 6139| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:47:00 [scheduling-1] INFO  p6spy - #1721652420005 | took 0ms | rollback | connection 6141| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:48:00 [scheduling-1] INFO  p6spy - #1721652480010 | took 0ms | rollback | connection 6145| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:49:00 [scheduling-1] INFO  p6spy - #1721652540007 | took 0ms | rollback | connection 6148| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:50:00 [scheduling-1] INFO  p6spy - #1721652600005 | took 0ms | rollback | connection 6151| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:51:00 [scheduling-1] INFO  p6spy - #1721652660006 | took 0ms | rollback | connection 6153| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:52:00 [scheduling-1] INFO  p6spy - #1721652720008 | took 0ms | rollback | connection 6157| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:53:00 [scheduling-1] INFO  p6spy - #1721652780010 | took 0ms | rollback | connection 6158| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:54:00 [scheduling-1] INFO  p6spy - #1721652840005 | took 0ms | rollback | connection 6161| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:55:00 [scheduling-1] INFO  p6spy - #1721652900005 | took 0ms | rollback | connection 6164| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:56:00 [scheduling-1] INFO  p6spy - #1721652960005 | took 0ms | rollback | connection 6168| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:57:00 [scheduling-1] INFO  p6spy - #1721653020025 | took 0ms | rollback | connection 6172| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:58:00 [scheduling-1] INFO  p6spy - #1721653080007 | took 0ms | rollback | connection 6175| url jdbc:h2:mem:test
+
+;
+2024-07-22 21:58:59 [scheduling-1] INFO  p6spy - #1721653139910 | took 0ms | rollback | connection 6176| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:00:00 [scheduling-1] INFO  p6spy - #1721653200010 | took 0ms | rollback | connection 6181| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:01:00 [scheduling-1] INFO  p6spy - #1721653260006 | took 0ms | rollback | connection 6182| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:02:00 [scheduling-1] INFO  p6spy - #1721653320004 | took 0ms | rollback | connection 6185| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:03:00 [scheduling-1] INFO  p6spy - #1721653380010 | took 0ms | rollback | connection 6189| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:04:00 [scheduling-1] INFO  p6spy - #1721653440014 | took 0ms | rollback | connection 6191| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:05:00 [scheduling-1] INFO  p6spy - #1721653500006 | took 0ms | rollback | connection 6196| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:06:00 [scheduling-1] INFO  p6spy - #1721653560010 | took 0ms | rollback | connection 6198| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:07:00 [scheduling-1] INFO  p6spy - #1721653620004 | took 0ms | rollback | connection 6200| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:08:00 [scheduling-1] INFO  p6spy - #1721653680005 | took 0ms | rollback | connection 6204| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:09:00 [scheduling-1] INFO  p6spy - #1721653740003 | took 0ms | rollback | connection 6206| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:10:00 [scheduling-1] INFO  p6spy - #1721653800004 | took 0ms | rollback | connection 6211| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:11:00 [scheduling-1] INFO  p6spy - #1721653860004 | took 0ms | rollback | connection 6213| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:12:00 [scheduling-1] INFO  p6spy - #1721653920002 | took 0ms | rollback | connection 6216| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:13:00 [scheduling-1] INFO  p6spy - #1721653980004 | took 0ms | rollback | connection 6219| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:14:00 [scheduling-1] INFO  p6spy - #1721654040008 | took 0ms | rollback | connection 6221| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:15:00 [scheduling-1] INFO  p6spy - #1721654100006 | took 0ms | rollback | connection 6226| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:16:00 [scheduling-1] INFO  p6spy - #1721654160010 | took 0ms | rollback | connection 6229| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:17:00 [scheduling-1] INFO  p6spy - #1721654220004 | took 0ms | rollback | connection 6231| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:18:00 [scheduling-1] INFO  p6spy - #1721654280002 | took 0ms | rollback | connection 6233| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:19:00 [scheduling-1] INFO  p6spy - #1721654340031 | took 0ms | rollback | connection 6237| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:20:00 [scheduling-1] INFO  p6spy - #1721654400007 | took 0ms | rollback | connection 6240| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:21:00 [scheduling-1] INFO  p6spy - #1721654460002 | took 0ms | rollback | connection 6242| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:22:00 [scheduling-1] INFO  p6spy - #1721654520004 | took 0ms | rollback | connection 6247| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:23:00 [scheduling-1] INFO  p6spy - #1721654580003 | took 0ms | rollback | connection 6248| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:24:00 [scheduling-1] INFO  p6spy - #1721654640005 | took 0ms | rollback | connection 6253| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:25:00 [scheduling-1] INFO  p6spy - #1721654700010 | took 0ms | rollback | connection 6255| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:26:00 [scheduling-1] INFO  p6spy - #1721654760011 | took 0ms | rollback | connection 6259| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:27:00 [scheduling-1] INFO  p6spy - #1721654820004 | took 0ms | rollback | connection 6260| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:28:00 [scheduling-1] INFO  p6spy - #1721654880007 | took 0ms | rollback | connection 6265| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:29:00 [scheduling-1] INFO  p6spy - #1721654940019 | took 0ms | rollback | connection 6268| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:30:00 [scheduling-1] INFO  p6spy - #1721655000008 | took 0ms | rollback | connection 6270| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:31:00 [scheduling-1] INFO  p6spy - #1721655060011 | took 0ms | rollback | connection 6274| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:32:00 [scheduling-1] INFO  p6spy - #1721655120003 | took 0ms | rollback | connection 6275| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:33:00 [scheduling-1] INFO  p6spy - #1721655180013 | took 0ms | rollback | connection 6280| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:34:00 [scheduling-1] INFO  p6spy - #1721655240007 | took 0ms | rollback | connection 6283| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:35:00 [scheduling-1] INFO  p6spy - #1721655300004 | took 0ms | rollback | connection 6286| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:36:00 [scheduling-1] INFO  p6spy - #1721655360011 | took 0ms | rollback | connection 6289| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:37:00 [scheduling-1] INFO  p6spy - #1721655420020 | took 0ms | rollback | connection 6290| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:38:00 [scheduling-1] INFO  p6spy - #1721655480004 | took 0ms | rollback | connection 6295| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:39:00 [scheduling-1] INFO  p6spy - #1721655540003 | took 0ms | rollback | connection 6297| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:40:00 [scheduling-1] INFO  p6spy - #1721655600005 | took 0ms | rollback | connection 6301| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:41:00 [scheduling-1] INFO  p6spy - #1721655660005 | took 0ms | rollback | connection 6303| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:42:00 [scheduling-1] INFO  p6spy - #1721655720004 | took 0ms | rollback | connection 6307| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:43:00 [scheduling-1] INFO  p6spy - #1721655780001 | took 0ms | rollback | connection 6309| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:44:00 [scheduling-1] INFO  p6spy - #1721655840004 | took 0ms | rollback | connection 6311| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:45:00 [scheduling-1] INFO  p6spy - #1721655900004 | took 0ms | rollback | connection 6314| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:46:00 [scheduling-1] INFO  p6spy - #1721655960003 | took 0ms | rollback | connection 6318| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:47:00 [scheduling-1] INFO  p6spy - #1721656020004 | took 0ms | rollback | connection 6321| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:48:00 [scheduling-1] INFO  p6spy - #1721656080005 | took 0ms | rollback | connection 6324| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:49:00 [scheduling-1] INFO  p6spy - #1721656140003 | took 0ms | rollback | connection 6327| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:50:00 [scheduling-1] INFO  p6spy - #1721656200004 | took 0ms | rollback | connection 6331| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:51:00 [scheduling-1] INFO  p6spy - #1721656260003 | took 0ms | rollback | connection 6333| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:52:00 [scheduling-1] INFO  p6spy - #1721656320003 | took 0ms | rollback | connection 6336| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:53:00 [scheduling-1] INFO  p6spy - #1721656380003 | took 0ms | rollback | connection 6338| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:54:00 [scheduling-1] INFO  p6spy - #1721656440004 | took 0ms | rollback | connection 6341| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:55:00 [scheduling-1] INFO  p6spy - #1721656500003 | took 0ms | rollback | connection 6346| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:56:00 [scheduling-1] INFO  p6spy - #1721656560010 | took 0ms | rollback | connection 6349| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:57:00 [scheduling-1] INFO  p6spy - #1721656620006 | took 0ms | rollback | connection 6352| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:58:00 [scheduling-1] INFO  p6spy - #1721656680007 | took 0ms | rollback | connection 6354| url jdbc:h2:mem:test
+
+;
+2024-07-22 22:59:00 [scheduling-1] INFO  p6spy - #1721656740004 | took 0ms | rollback | connection 6356| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:00:00 [scheduling-1] INFO  p6spy - #1721656800008 | took 0ms | rollback | connection 6361| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:01:00 [scheduling-1] INFO  p6spy - #1721656860010 | took 0ms | rollback | connection 6363| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:02:00 [scheduling-1] INFO  p6spy - #1721656920013 | took 0ms | rollback | connection 6365| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:03:00 [scheduling-1] INFO  p6spy - #1721656980002 | took 0ms | rollback | connection 6368| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:04:00 [scheduling-1] INFO  p6spy - #1721657040047 | took 0ms | rollback | connection 6373| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:05:00 [scheduling-1] INFO  p6spy - #1721657100013 | took 0ms | rollback | connection 6374| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:06:00 [scheduling-1] INFO  p6spy - #1721657160006 | took 0ms | rollback | connection 6378| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:07:00 [scheduling-1] INFO  p6spy - #1721657220001 | took 0ms | rollback | connection 6380| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:08:00 [scheduling-1] INFO  p6spy - #1721657280007 | took 0ms | rollback | connection 6385| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:09:00 [scheduling-1] INFO  p6spy - #1721657340008 | took 0ms | rollback | connection 6388| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:10:00 [scheduling-1] INFO  p6spy - #1721657400004 | took 0ms | rollback | connection 6389| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:11:00 [scheduling-1] INFO  p6spy - #1721657460009 | took 0ms | rollback | connection 6392| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:12:00 [scheduling-1] INFO  p6spy - #1721657520007 | took 0ms | rollback | connection 6397| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:13:00 [scheduling-1] INFO  p6spy - #1721657580004 | took 0ms | rollback | connection 6398| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:14:00 [scheduling-1] INFO  p6spy - #1721657640012 | took 0ms | rollback | connection 6401| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:15:00 [scheduling-1] INFO  p6spy - #1721657700005 | took 0ms | rollback | connection 6405| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:16:00 [scheduling-1] INFO  p6spy - #1721657760011 | took 0ms | rollback | connection 6409| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:17:00 [scheduling-1] INFO  p6spy - #1721657820005 | took 0ms | rollback | connection 6411| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:18:00 [scheduling-1] INFO  p6spy - #1721657880005 | took 0ms | rollback | connection 6414| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:19:00 [scheduling-1] INFO  p6spy - #1721657940005 | took 0ms | rollback | connection 6416| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:20:00 [scheduling-1] INFO  p6spy - #1721658000004 | took 0ms | rollback | connection 6419| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:21:00 [scheduling-1] INFO  p6spy - #1721658060009 | took 0ms | rollback | connection 6422| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:22:00 [scheduling-1] INFO  p6spy - #1721658120003 | took 0ms | rollback | connection 6425| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:23:00 [scheduling-1] INFO  p6spy - #1721658180004 | took 0ms | rollback | connection 6430| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:24:00 [scheduling-1] INFO  p6spy - #1721658240015 | took 0ms | rollback | connection 6433| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:25:00 [scheduling-1] INFO  p6spy - #1721658300002 | took 0ms | rollback | connection 6434| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:26:00 [scheduling-1] INFO  p6spy - #1721658360003 | took 0ms | rollback | connection 6439| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:27:00 [scheduling-1] INFO  p6spy - #1721658420005 | took 0ms | rollback | connection 6442| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:28:00 [scheduling-1] INFO  p6spy - #1721658480021 | took 0ms | rollback | connection 6445| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:29:00 [scheduling-1] INFO  p6spy - #1721658540017 | took 0ms | rollback | connection 6448| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:30:00 [scheduling-1] INFO  p6spy - #1721658600003 | took 0ms | rollback | connection 6449| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:31:00 [scheduling-1] INFO  p6spy - #1721658660000 | took 0ms | rollback | connection 6452| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:32:00 [scheduling-1] INFO  p6spy - #1721658720010 | took 0ms | rollback | connection 6457| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:33:00 [scheduling-1] INFO  p6spy - #1721658780010 | took 0ms | rollback | connection 6458| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:34:00 [scheduling-1] INFO  p6spy - #1721658840004 | took 0ms | rollback | connection 6462| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:35:00 [scheduling-1] INFO  p6spy - #1721658900005 | took 0ms | rollback | connection 6465| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:36:00 [scheduling-1] INFO  p6spy - #1721658960012 | took 0ms | rollback | connection 6469| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:37:00 [scheduling-1] INFO  p6spy - #1721659020003 | took 0ms | rollback | connection 6471| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:38:00 [scheduling-1] INFO  p6spy - #1721659080004 | took 0ms | rollback | connection 6473| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:39:00 [scheduling-1] INFO  p6spy - #1721659140006 | took 0ms | rollback | connection 6478| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:40:00 [scheduling-1] INFO  p6spy - #1721659200003 | took 0ms | rollback | connection 6479| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:41:00 [scheduling-1] INFO  p6spy - #1721659260080 | took 0ms | rollback | connection 6482| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:42:00 [scheduling-1] INFO  p6spy - #1721659320012 | took 0ms | rollback | connection 6486| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:43:00 [scheduling-1] INFO  p6spy - #1721659380007 | took 0ms | rollback | connection 6490| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:44:00 [scheduling-1] INFO  p6spy - #1721659440006 | took 0ms | rollback | connection 6491| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:45:00 [scheduling-1] INFO  p6spy - #1721659500010 | took 0ms | rollback | connection 6496| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:46:00 [scheduling-1] INFO  p6spy - #1721659560006 | took 0ms | rollback | connection 6499| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:47:00 [scheduling-1] INFO  p6spy - #1721659620010 | took 0ms | rollback | connection 6501| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:48:00 [scheduling-1] INFO  p6spy - #1721659680006 | took 0ms | rollback | connection 6505| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:49:00 [scheduling-1] INFO  p6spy - #1721659740008 | took 0ms | rollback | connection 6507| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:50:00 [scheduling-1] INFO  p6spy - #1721659800009 | took 0ms | rollback | connection 6509| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:51:00 [scheduling-1] INFO  p6spy - #1721659860005 | took 0ms | rollback | connection 6512| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:52:00 [scheduling-1] INFO  p6spy - #1721659920005 | took 0ms | rollback | connection 6515| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:53:00 [scheduling-1] INFO  p6spy - #1721659980007 | took 0ms | rollback | connection 6518| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:54:00 [scheduling-1] INFO  p6spy - #1721660040013 | took 0ms | rollback | connection 6522| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:55:00 [scheduling-1] INFO  p6spy - #1721660100035 | took 1ms | rollback | connection 6526| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:56:00 [scheduling-1] INFO  p6spy - #1721660160120 | took 0ms | rollback | connection 6528| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:57:00 [scheduling-1] INFO  p6spy - #1721660220011 | took 0ms | rollback | connection 6530| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:58:00 [scheduling-1] INFO  p6spy - #1721660280016 | took 0ms | rollback | connection 6535| url jdbc:h2:mem:test
+
+;
+2024-07-22 23:59:00 [scheduling-1] INFO  p6spy - #1721660340007 | took 0ms | rollback | connection 6537| url jdbc:h2:mem:test
+
+;
