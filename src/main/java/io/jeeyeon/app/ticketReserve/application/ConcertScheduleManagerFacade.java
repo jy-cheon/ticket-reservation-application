@@ -36,4 +36,8 @@ public class ConcertScheduleManagerFacade {
     public List<Concert> getConcertList() {
         return concertService.getAvailableConcerts();
     }
+
+    public void registerConcert(String concertName) {
+        concertService.registerConcert(concertName);
+    }
 }

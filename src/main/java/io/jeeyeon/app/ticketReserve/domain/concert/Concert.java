@@ -19,4 +19,7 @@ public class Concert {
         this.concertId = concertId;
         this.concertName = concertName;
     }
+    public Concert(String concertName) {
+        this.concertName = concertName;
+    }
 }

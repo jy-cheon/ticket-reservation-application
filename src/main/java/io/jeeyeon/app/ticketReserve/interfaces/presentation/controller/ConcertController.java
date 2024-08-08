@@ -67,4 +67,17 @@ public class ConcertController {
         List<Seat> list =  concertScheduleManagerFacade.getAvailableSeatsForReservation(concertId, date);
         return ResponseEntity.ok(ResponseDto.success(list));
     }
+
+    @Operation(summary = "콘서트 등록 API", description = "콘서트를 등록한다")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "요청 성공")
+    })
+    @PostMapping("")
+    public ResponseEntity<ResponseDto<?>> registerConcert(
+            @Parameter(description = "콘서트 이름을 입력하세요.", required = true)
+            @RequestParam String concertName) {
+
+        concertScheduleManagerFacade.registerConcert(concertName);
+        return ResponseEntity.ok(ResponseDto.success("성공"));
+    }
 }

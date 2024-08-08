@@ -1,7 +1,6 @@
 package io.jeeyeon.app.ticketReserve.domain.concert;
 
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -12,4 +11,6 @@ public interface ConcertRepository {
     List<Concert> findAll();
 
     List<Concert> findConcertsBeforeCurrentDate();
+
+    void registerConcert(Concert concert);
 }

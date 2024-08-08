@@ -46,4 +46,9 @@ public class ConcertRepositoryImpl implements ConcertRepository {
         }
 
     }
+
+    @Override
+    public void registerConcert(Concert concert) {
+        concertJpaRepository.save(new ConcertEntity(concert));
+    }
 }
