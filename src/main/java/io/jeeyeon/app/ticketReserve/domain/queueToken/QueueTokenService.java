@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.stereotype.Service;
+
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
@@ -21,10 +22,10 @@ public class QueueTokenService {
 
     public void createToken(Long userId, Long concertId) {
         // 콘서트별 순서 id 조회
-        Long nextSequenceId = queueTokenRepository.getNextSequenceIdForConcert(concertId);
+//        Long nextSequenceId = queueTokenRepository.getNextSequenceIdForConcert(concertId);
 
         // 대기 토큰 생성
-        QueueToken token = new QueueToken(userId, concertId, nextSequenceId);
+        QueueToken token = new QueueToken(userId, concertId);
 
         queueTokenRepository.save(token);
     }
@@ -156,7 +157,7 @@ public class QueueTokenService {
 
     public QueueToken validateActiveToken(Long concertId, Long userId) {
         // 토큰 유효성 검증
-        QueueToken token = this.getTokenInfo(concertId, userId);
+         QueueToken token = this.getTokenInfo(concertId, userId);
 
         token.validateActiveToken();
         return token;
@@ -166,6 +167,20 @@ public class QueueTokenService {
         return queueTokenRepository.findByTokenId(tokenId)
                 .orElseThrow(() -> new BaseException(ErrorType.ENTITY_NOT_FOUND));
     }
+
+//    public QueueToken getTokenInfo(Long tokenId) {
+//        QueueToken token = findByTokenId(tokenId);
+//        if (token.isWaiting()) {
+//            // 대기 번호 조회
+//            long aheadCount = queueTokenRepository.findWaitingAheadCount(token.getConcertId(), token.getSequenceId(), token.getStatus());
+//            log.info("대기 번호 조회 : {}", aheadCount);
+//            // 대기 번호 설정
+//            token.setAheadCount(aheadCount);
+//        } else if (token.isActive()) {
+//            token.setAheadCount(0l);
+//        }
+//        return token;
+//    }
 
     public void expireQueueToken(Long tokenId) {
         QueueToken token = this.findByTokenId(tokenId);
