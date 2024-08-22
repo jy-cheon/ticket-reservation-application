@@ -18,15 +18,24 @@ public class QueueTokenEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "TOKEN_ID")
     private Long tokenId;
+    @Column(name = "USER_ID")
     private Long userId;
+    @Column(name = "CONCERT_ID")
     private Long concertId;
+    @Column(name = "SEQUENCE_ID")
     private Long sequenceId; // 각 콘서트별 순서 ID
     @Enumerated(EnumType.STRING)
+    @Column(name = "STATUS")
     private TokenStatus status;// waiting, active, expired
+    @Column(name = "ACTIVATED_AT")
     private LocalDateTime activatedAt;
+    @Column(name = "EXPIRED_AT")
     private LocalDateTime expiredAt;
+    @Column(name = "CREATED_AT")
     private LocalDateTime createdAt;
+    @Column(name = "UPDATED_AT")
     private LocalDateTime updatedAt;
 
     public QueueTokenEntity(QueueToken queueToken) {

@@ -18,11 +18,16 @@ public class PaymentOutboxEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     private Long id;
+    @Column(name = "MESSAGE")
     private String message;
     @Enumerated(EnumType.STRING)
+    @Column(name = "PAYMENT_MESSAGE_STATUS")
     private PaymentMessageStatus status;
+    @Column(name = "CREATED_AT")
     private LocalDateTime createdAt;
+    @Column(name = "UPDATED_AT")
     private LocalDateTime updatedAt;
 
     @PrePersist

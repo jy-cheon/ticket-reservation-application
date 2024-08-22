@@ -5,8 +5,10 @@ spring:
     password: 1234
     driver-class-name: com.mysql.jdbc.Driver
   jpa:
-#    hibernate:
+    hibernate:
 #      ddl-auto: create-drop
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     properties:
       hibernate:
         format_sql: true

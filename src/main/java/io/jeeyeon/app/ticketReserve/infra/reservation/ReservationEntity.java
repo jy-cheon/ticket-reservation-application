@@ -18,13 +18,29 @@ public class ReservationEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "RESERVATION_ID")
     private Long reservationId;
+    @Column(name = "SEAT_ID")
     private Long seatId;
+    @Column(name = "TOKEN_ID")
     private Long tokenId;
     @Enumerated(EnumType.STRING)
+    @Column(name = "STATUS")
     private ReservationStatus status;
+    @Column(name = "CREATED_AT")
     private LocalDateTime createdAt;
+    @Column(name = "UPDATED_AT")
     private LocalDateTime updatedAt;
+
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        updatedAt = LocalDateTime.now();
+    }
 
     public ReservationEntity(Reservation reservation) {
         this.reservationId = reservation.getReservationId();
