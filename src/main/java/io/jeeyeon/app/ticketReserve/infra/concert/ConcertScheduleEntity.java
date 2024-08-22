@@ -17,11 +17,17 @@ public class ConcertScheduleEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "CONCERT_SCHEDULE_ID")
     private Long concertScheduleId;
+    @Column(name = "CONCERT_ID")
     private Long concertId;
+    @Column(name = "CONCERT_DATE")
     private LocalDateTime concertDate;
+    @Column(name = "LOCATION")
     private String location;
+    @Column(name = "CREATED_AT")
     private LocalDateTime createdAt;
+    @Column(name = "UPDATED_AT")
     private LocalDateTime updatedAt;
 
     @PrePersist

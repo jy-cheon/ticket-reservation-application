@@ -4,10 +4,9 @@ import io.jeeyeon.app.ticketReserve.domain.common.exception.BaseException;
 import io.jeeyeon.app.ticketReserve.domain.common.exception.ErrorType;
 import io.jeeyeon.app.ticketReserve.domain.concert.ConcertService;
 import io.jeeyeon.app.ticketReserve.domain.payment.Payment;
-import io.jeeyeon.app.ticketReserve.domain.payment.PaymentEvent;
-import io.jeeyeon.app.ticketReserve.domain.payment.PaymentEventPublisher;
 import io.jeeyeon.app.ticketReserve.domain.payment.PaymentService;
-import io.jeeyeon.app.ticketReserve.domain.queueToken.QueueToken;
+import io.jeeyeon.app.ticketReserve.domain.payment.event.PaymentEvent;
+import io.jeeyeon.app.ticketReserve.domain.payment.event.PaymentEventPublisher;
 import io.jeeyeon.app.ticketReserve.domain.queueToken.QueueTokenService;
 import io.jeeyeon.app.ticketReserve.domain.reservation.Reservation;
 import io.jeeyeon.app.ticketReserve.domain.reservation.ReservationService;
@@ -15,13 +14,11 @@ import io.jeeyeon.app.ticketReserve.domain.seat.Seat;
 import io.jeeyeon.app.ticketReserve.domain.seat.SeatService;
 import io.jeeyeon.app.ticketReserve.domain.seat.SeatStatus;
 import io.jeeyeon.app.ticketReserve.domain.user.UserService;
-import jakarta.persistence.EntityNotFoundException;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor
@@ -35,7 +32,6 @@ public class PaymentFacade {
     private final PaymentEventPublisher paymentEventPublisher;
 
 
-    // 결제
     @Transactional
     public Payment processPayment(Long concertId, Long reservationId, Long userId) throws Exception {
         // 예약 정보 가져오기

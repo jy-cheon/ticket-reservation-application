@@ -18,15 +18,23 @@ public class SeatEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "SEAT_ID")
     private Long seatId;
+    @Column(name = "CONCERT_SCHEDULE_ID")
     private Long concertScheduleId;
+    @Column(name = "SEAT_NUMBER")
     private String seatNumber;
+    @Column(name = "TICKET_PRICE")
     private Integer ticketPrice;
     @Enumerated(EnumType.STRING)
+    @Column(name = "STATUS")
     private SeatStatus status;
     @Version
+    @Column(name = "VERSION")
     private int version;
+    @Column(name = "CREATED_AT")
     private LocalDateTime createdAt;
+    @Column(name = "UPDATED_AT")
     private LocalDateTime updatedAt;
 
     public SeatEntity(Seat seat) {

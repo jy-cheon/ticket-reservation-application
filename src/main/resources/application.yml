@@ -5,8 +5,10 @@ spring:
     password: 1234
     driver-class-name: com.mysql.jdbc.Driver
   jpa:
-#    hibernate:
+    hibernate:
 #      ddl-auto: create-drop
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     properties:
       hibernate:
         format_sql: true
@@ -20,7 +22,19 @@ spring:
     redis:
       host: localhost
       port: 6379
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: my-group
+
 
 logging.level:
   org.hibernate.SQL: debug
   #org.hibernate.type: trace
+
+payment.topic: paymentTopic

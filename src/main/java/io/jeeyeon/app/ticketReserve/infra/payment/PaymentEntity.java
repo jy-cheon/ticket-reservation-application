@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.time.LocalDateTime;
 
 @Entity
@@ -17,10 +16,15 @@ public class PaymentEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "PAYMENT_ID")
     private Long paymentId;
+    @Column(name = "RESERVATION_ID")
     private Long reservationId;
+    @Column(name = "AMOUNT")
     private Integer amount;
+    @Column(name = "CREATED_AT")
     private LocalDateTime createdAt;
+    @Column(name = "UPDATED_AT")
     private LocalDateTime updatedAt;
 
     public PaymentEntity(Payment payment) {
